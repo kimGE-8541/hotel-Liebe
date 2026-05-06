@@ -4,14 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- swiper.css  -->
+    <link rel="stylesheet" href="assets/css/libs/swiper-bundle.min.css">
+    <!-- font.css  -->
+    <link rel="stylesheet" href="assets/css/fonts.css">
     <!-- reset.css -->
     <link rel="stylesheet" href="assets/css/reset.css">
     <!-- normalize.css  -->
     <link rel="stylesheet" href="assets/css/normalize.css">
     <!-- common.css  -->
     <link rel="stylesheet" href="assets/css/common.css">
+    <!-- style.css -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    
+    <header class="main-header">
+        <div class="container header__container">
+            <div class="header__top">
+                <h1 class="header__logo logo">Liebe</h1>
+                <button type="button" class="header__lang-btn">KR</button>
+            </div>
+            <div class="header__bottom">
+                <nav class="header__gnb" aria-label="주요 메뉴">
+                    <ul class="header__gnb-list">
+                        <li><a href="#">Rooms</a></li>
+                        <li><a href="#">Dining</a></li>
+                        <li><a href="#">Facilities</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </nav>
+                <button type="button" class="header__reserve-btn">
+                    <span>Reservation</span>
+                    <span aria-hidden="true" class="header__reserve-arrow">-></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="kv" aria-label="메인 비주얼">
+            <video class="kv__video is-active" autoplay muted loop playsinline preload="auto"></video>
+            <video class="kv__video" muted loop playsinline preload="auto"></video>
+            <div class="kv__overlay">
+                <div class="container kv__container">
+                    <p class="kv__eyebrow txt-light-p25 fc-white">일상에서 벗어난 프리미엄 휴식</p>
+                    <h2 class="kv__title">Stay beyond the<br>Ordinary</h2>
+
+                    <div class="kv__controls" aria-label="비디오 컨트롤러">
+                        <button type="button" class="kv__control-btn kv__prev" aria-label="이전 영상">
+                            <span aria-hidden="true" class="kv__icon">&larr;</span>
+                        </button>
+                        <button type="button" class="kv__control-btn kv__toggle" aria-label="일시정지">
+                            <span aria-hidden="true" class="kv__icon kv__play-icon">||</span>
+                        </button>
+                        <button type="button" class="kv__control-btn kv__next" aria-label="다음 영상">
+                            <span aria-hidden="true" class="kv__icon">&rarr;</span>
+                        </button>
+
+                        <div class="kv__progress" role="presentation" aria-hidden="true">
+                            <span class="kv__progress-fill"></span>
+                        </div>
+                    </div>
+
+                    <button type="button" class="kv__cta title-h3">
+                        <span>Reservation</span>
+                        <span aria-hidden="true">&gt;</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/js/libs/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

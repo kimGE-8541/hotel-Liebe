@@ -29,6 +29,14 @@ section {
 
 /* 3. 타이포그래피 (Typography) */
 
+.logo {
+  font-family: 'Italiana', serif;
+  font-size: 50px;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--color-text);
+}
+
 /* 제주명조 적용 (폰트가 로드되어 있다는 가정하에 작성) */
 .title-h2, .title-h3 {
   font-family: 'Jeju Myeongjo', serif;
