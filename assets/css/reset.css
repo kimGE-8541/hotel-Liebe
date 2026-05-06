@@ -1,0 +1,76 @@
+/* 1. 박스 모델 설정 및 터치 간섭 방지 */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* 2. 텍스트 크기 조정 및 부드러운 스크롤 */
+  html {
+    -webkit-text-size-adjust: none; /* iOS Safari에서 가로 모드 시 텍스트 크기 멋대로 키우는 것 방지 */
+    text-size-adjust: none;
+    scroll-behavior: smooth;
+  }
+  
+  /* 3. 기본 바디 설정 (가독성 및 높이 확보) */
+  body {
+    min-height: 100vh;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased; /* 폰트를 더 매끄럽게 렌더링 */
+    text-rendering: optimizeSpeed;
+  }
+  
+  /* 4. 리스트 스타일 제거 (접근성 필요 시 role="list" 권장) */
+  ol, ul {
+    list-style: none;
+  }
+  
+  /* 5. 이미지 및 미디어 요소의 기본 동작 설정 */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* 6. 폼 요소 가독성 및 폰트 상속 */
+  input, button, textarea, select {
+    font: inherit; /* 부모의 폰트 스타일을 그대로 상속 */
+    color: inherit;
+    background-color: transparent;
+    border: none;
+  }
+  
+  /* 7. 버튼의 커서 및 상호작용 설정 */
+  button, [role="button"] {
+    cursor: pointer;
+  }
+  
+  /* 8. 텍스트 영역 가로 확장 방지 */
+  textarea {
+    resize: vertical;
+  }
+  
+  /* 9. 링크 스타일 초기화 */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* 10. 테이블 경계선 합치기 */
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  /* 11. (선택사항) 사용자 애니메이션 비활성화 처리 (접근성) */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }

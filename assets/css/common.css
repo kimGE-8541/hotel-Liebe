@@ -1,0 +1,95 @@
+/* 1. 디자인 토큰 (변수 설정) */
+:root {
+  /* Colors */
+  --color-primary: #3A2F2B;
+  --color-secondary: #F5F1EC;
+  --color-accent: #E6DED3;
+  --color-text: #2B2B2B;
+  --color-white: #FFFFFF;
+
+  /* Layout */
+  --content-width: 1480px;
+  --section-space: 120px;
+  --gutter: 20px;
+
+  /* Spacing System (15의 배수) */
+  --space: 15px;
+}
+
+/* 2. 레이아웃 시스템 */
+.container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+section {
+  padding-top: var(--section-space);
+  padding-bottom: var(--section-space);
+}
+
+/* 3. 타이포그래피 (Typography) */
+
+/* 제주명조 적용 (폰트가 로드되어 있다는 가정하에 작성) */
+.title-h2, .title-h3 {
+  font-family: 'Jeju Myeongjo', serif;
+  color: var(--color-text);
+  line-height: 1.0; /* 100% */
+}
+
+.title-h2 {
+  font-size: 65px;
+}
+
+.title-h3 {
+  font-size: 40px;
+}
+
+/* Pretendard 적용 */
+.txt-bold-p25, .txt-light-p25, .txt-bold-p20, .txt-light-p20 {
+  font-family: 'Pretendard', sans-serif;
+  color: var(--color-text);
+  line-height: 1.5; /* 150% */
+}
+
+.txt-bold-p25 {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.txt-light-p25 {
+  font-size: 25px;
+  font-weight: 300;
+}
+
+.txt-bold-p20 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.txt-light-p20 {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+/* 4. 유틸리티 클래스 (색상 및 간격) */
+
+/* Text Colors */
+.fc-primary { color: var(--color-primary); }
+.fc-white { color: var(--color-white); }
+
+/* Background Colors */
+.bg-primary { background-color: var(--color-primary); }
+.bg-secondary { background-color: var(--color-secondary); }
+.bg-accent { background-color: var(--color-accent); }
+
+/* Gap & Margin (15의 배수 유틸리티 예시) */
+.mt-15 { margin-top: var(--space-15); }
+.mt-30 { margin-top: calc(var(--space) * 2); }
+.mt-45 { margin-top: calc(var(--space) * 3); }
+.mt-60 { margin-top: calc(var(--space) * 4); }
+
+.p-30 { padding: calc(var(--space) * 2); }
+.p-45 { padding: calc(var(--space) * 3); }
+
+/* Flex Grid Gap */
+.gap-20 { gap: var(--gutter); }
