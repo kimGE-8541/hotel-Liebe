@@ -177,41 +177,35 @@
     new KvVideoController(kvSection);
   }
 
+  function initializeHeaderPastKv() {
+    const header = document.querySelector(".main-header");
+    const kvSection = document.querySelector(".kv");
+    if (!header || !kvSection) return;
+
+    const CLASS_PAST = "is-past-kv";
+
+    const update = () => {
+      const past = kvSection.getBoundingClientRect().bottom <= 0;
+      header.classList.toggle(CLASS_PAST, past);
+      if (past) {
+        header.setAttribute("aria-hidden", "true");
+      } else {
+        header.removeAttribute("aria-hidden");
+      }
+    };
+
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+  }
+
   function initializeRoomTabs() {
     const roomSection = document.querySelector(".room");
     if (!roomSection) return;
 
     const tabButtons = Array.from(roomSection.querySelectorAll(".room__tab"));
-    const sourceMap = new Map(
-      Array.from(roomSection.querySelectorAll(".room__source")).map((source) => [source.dataset.tab, source])
-    );
-    const mediaWrapper = roomSection.querySelector(".room__media");
-    const contentWrapper = roomSection.querySelector(".room__content");
-    const imageElement = roomSection.querySelector(".room__media img");
-    const titleElement = roomSection.querySelector(".room__title");
-    const descriptionElement = roomSection.querySelector(".room__content p");
-    const viewMoreElement = roomSection.querySelector(".room__view-more");
-    let isSwitching = false;
-    if (!tabButtons.length || !sourceMap.size) return;
-    if (!mediaWrapper || !contentWrapper || !imageElement || !titleElement || !descriptionElement || !viewMoreElement) return;
-
-    const updateDisplayContent = (tabName) => {
-      const source = sourceMap.get(tabName);
-      if (!source) return;
-
-      const sourceImage = source.querySelector("img");
-      const sourceTitle = source.querySelector("h3");
-      const sourceDescription = source.querySelector("p");
-      const sourceLink = source.querySelector("a");
-      if (!sourceImage || !sourceTitle || !sourceDescription || !sourceLink) return;
-
-      imageElement.src = sourceImage.getAttribute("src") || "";
-      imageElement.alt = sourceImage.getAttribute("alt") || "";
-      titleElement.textContent = sourceTitle.textContent || "";
-      descriptionElement.innerHTML = sourceDescription.innerHTML;
-      viewMoreElement.textContent = sourceLink.textContent || "";
-      viewMoreElement.href = sourceLink.getAttribute("href") || "#";
-    };
+    const panels = Array.from(roomSection.querySelectorAll(".room__panel"));
+    if (!tabButtons.length || !panels.length) return;
 
     const activateTab = (tabName) => {
       tabButtons.forEach((button) => {
@@ -220,26 +214,74 @@
         button.setAttribute("aria-selected", isActive ? "true" : "false");
       });
 
-      mediaWrapper.classList.add("is-fading");
-      contentWrapper.classList.add("is-fading");
-
-      window.setTimeout(() => {
-        updateDisplayContent(tabName);
-        mediaWrapper.classList.remove("is-fading");
-        contentWrapper.classList.remove("is-fading");
-        isSwitching = false;
-      }, 220);
+      panels.forEach((panel) => {
+        const isActive = panel.dataset.tabPanel === tabName;
+        panel.classList.toggle("is-active", isActive);
+        if (isActive) {
+          panel.removeAttribute("aria-hidden");
+        } else {
+          panel.setAttribute("aria-hidden", "true");
+        }
+      });
     };
 
     tabButtons.forEach((button) => {
       button.addEventListener("click", () => {
-        if (isSwitching || button.classList.contains("is-active")) return;
-        isSwitching = true;
+        if (button.classList.contains("is-active")) return;
         activateTab(button.dataset.tab);
       });
     });
   }
 
+  function initializeSceneSwiper() {
+    const sceneSwiper = document.querySelector(".scene__swiper");
+    if (!sceneSwiper || typeof Swiper === "undefined") return;
+
+    new Swiper(sceneSwiper, {
+      loop: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      spaceBetween: 20,
+      grabCursor: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      speed: 700,
+    });
+  }
+
+  function initializeMobileMenu() {
+    const header = document.querySelector(".main-header");
+    const menuButton = document.querySelector(".header__menu-btn");
+    const mobileMenu = document.querySelector(".header__mobile-menu");
+    if (!header || !menuButton || !mobileMenu) return;
+
+    const OPEN_CLASS = "is-menu-open";
+
+    const closeMenu = () => {
+      header.classList.remove(OPEN_CLASS);
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.setAttribute("aria-label", "메뉴 열기");
+      mobileMenu.setAttribute("aria-hidden", "true");
+    };
+
+    menuButton.addEventListener("click", () => {
+      const willOpen = !header.classList.contains(OPEN_CLASS);
+      header.classList.toggle(OPEN_CLASS, willOpen);
+      menuButton.setAttribute("aria-expanded", willOpen ? "true" : "false");
+      menuButton.setAttribute("aria-label", willOpen ? "메뉴 닫기" : "메뉴 열기");
+      mobileMenu.setAttribute("aria-hidden", willOpen ? "false" : "true");
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 767) closeMenu();
+    });
+  }
+
   initializeKvSection();
+  initializeHeaderPastKv();
   initializeRoomTabs();
+  initializeSceneSwiper();
+  initializeMobileMenu();
 })();
