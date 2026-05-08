@@ -1,3 +1,5 @@
+@import url(common.css);
+
 /* Main Header */
 .main-header {
   position: fixed;
@@ -6,14 +8,14 @@
   width: 100%;
   z-index: 10;
   background-color: rgba(0, 0, 0, 0.5);
-  padding-top: calc(var(--space) * 2);
+  padding-top: var(--space);
   padding-bottom: var(--space);
 }
 
 .header__container {
   display: flex;
   flex-direction: column;
-  gap: calc(var(--space) * 2);
+  gap: var(--space);
 }
 
 .header__top,
@@ -22,34 +24,54 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: auto;
 }
 
 .header__logo {
   color: var(--color-white);
+  text-align: center;
+  width: 1480px;
 }
 
 .header__lang-btn,
 .header__gnb-list a,
 .header__reserve-btn {
   font-family: "Jeju Myeongjo", serif;
+  font-weight: 400;
   font-size: 20px;
   color: var(--color-white);
 }
 
 .header__lang-btn {
-  position: absolute;
-  top: 50%;
-  right: -49px;
-  transform: translateY(-50%);
   padding: 10px 15px;
   border-bottom: 1px solid var(--color-white);
+  line-height: 1;
+  margin-left: calc(var(--space) * 3);
+}
+
+
+.header__gnb-list {
+  width: 1480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--space) * 4);
+}
+
+.header__reserve-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space);
+  padding: var(--space) 20px;
+  border: 1px solid var(--color-white);
   line-height: 1;
 }
 
 /* Key Visual */
 .kv {
   position: relative;
-  min-height: 100vh;
+  display: flex;
+  max-height: 100vh;
   overflow: hidden;
   background-color: #000000;
 }
@@ -70,26 +92,26 @@
 }
 
 .kv__overlay {
+  width: 100%;
   position: relative;
   z-index: 1;
-  min-height: 100vh;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.1);
 }
 
 .kv__container {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  gap: calc(var(--space) * 2);
-  padding-top: calc(var(--space) * 8);
-  padding-bottom: calc(var(--space) * 8);
+  justify-content: center;
+  gap: var(--space);
+  padding-top: var(--section-space);
 }
 
 .kv__title {
   font-family: "Jeju Myeongjo", serif;
   font-size: 100px;
-  line-height: 1.2;
+  line-height: 1;
   font-weight: 400;
   color: var(--color-white);
 }
@@ -97,7 +119,7 @@
 .kv__controls {
   display: inline-flex;
   align-items: center;
-  gap: calc(var(--space) * 2);
+  gap: var(--space);
 }
 
 .kv__control-btn {
@@ -106,7 +128,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--color-white);
   color: var(--color-white);
 }
 
@@ -114,15 +135,15 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 16px;
-  height: 16px;
-  font-size: 12px;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
   line-height: 1;
 }
 
 .kv__progress {
   width: 200px;
-  height: 4px;
+  height: 2px;
   background-color: rgba(255, 255, 255, 0.5);
   overflow: hidden;
 }
@@ -132,6 +153,10 @@
   width: 0%;
   height: 100%;
   background-color: var(--color-white);
+}
+
+.kv__toggle {
+  transform: rotate(90deg);
 }
 
 .kv__cta {
@@ -146,22 +171,138 @@
   border: 1px solid var(--color-white);
 }
 
-.header__gnb-list {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: calc(var(--space) * 4);
+/* about */
+
+.about {
+  background-image: url(../images/about-bg.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.header__reserve-btn {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  display: inline-flex;
+.about_overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* room */
+
+.room__tabs {
+  display: flex;
   align-items: center;
-  gap: var(--space);
-  padding: var(--space) 20px;
-  border: 1px solid var(--color-white);
-  line-height: 1;
+  gap: calc(var(--space) * 3);
+  margin-bottom: calc(var(--space) * 4);
+}
+
+.room__tab {
+  position: relative;
+  padding-bottom: var(--space);
+  opacity: 0.5;
+  transition: opacity 0.35s ease;
+}
+
+.room__tab::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.35s ease;
+}
+
+.room__tab.is-active {
+  opacity: 1;
+}
+
+.room__tab.is-active::after {
+  transform: scaleX(1);
+}
+
+.room__body {
+  min-height: 555px;
+}
+
+.room__display {
+  display: flex;
+  padding-right: 105px;
+  justify-content: space-between;
+  gap: calc(var(--space) * 2);
+}
+
+.room__media {
+  aspect-ratio: 4 / 3;
+  max-width: 980px;
+  overflow: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.room__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.room__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: opacity 0.3s ease;
+}
+
+.room__media.is-fading,
+.room__content.is-fading {
+  opacity: 0;
+}
+
+.room__view-more {
+  align-self: flex-start;
+  border-bottom: 1px solid var(--color-primary);
+}
+
+@media (max-width: 1279px) {
+  .room__tab {
+    font-size: 32px;
+  }
+
+  .room__body {
+    min-height: 720px;
+  }
+
+  .room__display {
+    flex-direction: column;
+    padding-right: 0;
+    gap: calc(var(--space) * 2);
+  }
+
+  .room__title {
+    font-size: 50px;
+    margin-bottom: var(--space);
+  }
+}
+
+@media (max-width: 767px) {
+  .room__tabs {
+    gap: var(--space);
+    margin-bottom: calc(var(--space) * 2);
+  }
+
+  .room__tab {
+    font-size: 24px;
+    padding-bottom: 10px;
+  }
+
+  .room__body {
+    min-height: 640px;
+  }
+
+  .room__title {
+    font-size: 40px;
+  }
+
+  .room__view-more {
+    font-size: 18px;
+  }
 }
