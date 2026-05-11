@@ -46,6 +46,11 @@
   width: 1480px;
 }
 
+.header__logo a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .header__actions {
   display: inline-flex;
   align-items: center;

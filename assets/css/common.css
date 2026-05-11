@@ -13,7 +13,7 @@
   /* Colors */
   --color-primary: #7C594C;
   --color-secondary: #F5F1EC;
-  --color-accent: #E6DED3;
+  --color-accent: #7A8A74;
   --color-text: #2B2B2B;
   --color-white: #FFFFFF;
 
@@ -116,3 +116,19 @@
 
 /* Flex Grid Gap */
 .gap-20 { gap: var(--gutter); }
+
+/* GSAP ScrollTrigger — 초기 상태(JS 로드 후 gsap.set으로도 설정) */
+@media (prefers-reduced-motion: no-preference) {
+  .gsap-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    will-change: opacity, transform;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gsap-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
