@@ -196,3 +196,549 @@
     transform: none;
   }
 }
+
+/* Subpage shared layout */
+.sub-main {
+  padding-top: 0;
+}
+
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-top: var(--space);
+  padding-bottom: var(--space);
+  transition:
+    transform 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.35s ease,
+    box-shadow 0.35s ease,
+    padding-top 0.35s ease,
+    padding-bottom 0.35s ease;
+}
+
+.header__container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space);
+}
+
+.header__top,
+.header__bottom {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+}
+
+.header__logo {
+  color: var(--color-white);
+  width: 1480px;
+  text-align: center;
+}
+
+.header__logo a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.header__actions {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space);
+}
+
+.header__lang-btn,
+.header__gnb-list a,
+.header__reserve-btn,
+.header__mobile-gnb-list a,
+.header__mobile-reserve-btn {
+  font-family: "Jeju Myeongjo", serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--color-white);
+}
+
+.header__lang-btn {
+  padding: 10px 15px;
+  border-bottom: 1px solid var(--color-white);
+  line-height: 1;
+  margin-left: calc(var(--space) * 3);
+}
+
+.header__menu-btn {
+  display: none;
+  width: 30px;
+  height: 30px;
+  color: var(--color-white);
+  align-items: center;
+  justify-content: center;
+}
+
+.header__gnb-list {
+  width: 1480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--space) * 4);
+}
+
+.header__gnb-list a {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.header__gnb-list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-white);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.25s ease;
+}
+
+.header__gnb-list a:hover::after,
+.header__gnb-list a:focus-visible::after,
+.header__gnb-list a:active::after {
+  transform: scaleX(1);
+}
+
+.header__reserve-btn,
+.header__mobile-reserve-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space);
+  padding: var(--space) 20px;
+  border: 1px solid var(--color-white);
+  line-height: 1;
+}
+
+.header__mobile-menu {
+  display: none;
+}
+
+.sub-hero {
+  --sub-hero-height: 860px;
+  --sub-hero-header-clear: 120px;
+  height: var(--sub-hero-height);
+  min-height: var(--sub-hero-height);
+  background-image: var(--sub-hero-image, url(../images/sustainability-kv.png));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.sub-hero__overlay {
+  height: 100%;
+  min-height: var(--sub-hero-height);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sub-hero__container {
+  height: 100%;
+  min-height: var(--sub-hero-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: var(--sub-hero-header-clear);
+  padding-bottom: calc(var(--space) * 2);
+  text-align: left;
+}
+
+.sub-hero__inner {
+  width: 100%;
+  max-width: 100%;
+  text-align: left;
+}
+
+.sub-about__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(var(--space) * 4);
+}
+
+.sub-about__text {
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: left;
+}
+
+.sub-about__media {
+  flex: 0 0 730px;
+  width: 730px;
+  height: 461px;
+  overflow: hidden;
+}
+
+.sub-about__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.footer {
+  background-color: var(--color-text);
+  color: var(--color-white);
+  padding-top: calc(var(--space) * 4);
+  padding-bottom: calc(var(--space) * 4);
+}
+
+.footer__txt-light,
+.footer__txt-bold {
+  font-family: "Pretendard", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-white);
+}
+
+.footer__txt-light {
+  font-weight: 300;
+}
+
+.footer__txt-bold {
+  font-weight: 500;
+}
+
+.footer__logo {
+  width: auto;
+}
+
+.footer__upper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: calc(var(--space) * 2);
+}
+
+.footer__brand-group {
+  display: flex;
+  align-items: center;
+  gap: 150px;
+}
+
+.footer__info {
+  font-style: normal;
+}
+
+.footer__utility {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.footer__line {
+  margin: 0;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.footer__lower {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: calc(var(--space) * 2);
+}
+
+.footer__sns {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space);
+}
+
+.footer__sns-link {
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__sns-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 1439px) {
+  .container {
+    box-sizing: border-box;
+    padding-left: calc(var(--space) * 2);
+    padding-right: calc(var(--space) * 2);
+  }
+
+  .header__top,
+  .header__bottom {
+    width: 100%;
+    margin-left: 0;
+    justify-content: space-between;
+  }
+
+  .header__logo,
+  .header__gnb-list {
+    width: auto;
+  }
+
+  .header__lang-btn,
+  .header__gnb-list a,
+  .header__reserve-btn,
+  .header__mobile-gnb-list a,
+  .header__mobile-reserve-btn {
+    font-size: 18px;
+  }
+
+  .header__gnb-list {
+    gap: calc(var(--space) * 2);
+  }
+
+  .sub-hero {
+    --sub-hero-header-clear: 110px;
+    height: clamp(520px, 72svh, 860px);
+    min-height: clamp(520px, 72svh, 860px);
+  }
+
+  .sub-hero__overlay,
+  .sub-hero__container {
+    min-height: clamp(520px, 72svh, 860px);
+  }
+
+  .sub-hero .title-h2 {
+    font-size: clamp(48px, 6vw, 65px);
+  }
+
+  .sub-about__container {
+    gap: calc(var(--space) * 3);
+  }
+}
+
+@media (max-width: 1280px) {
+  .section_padding {
+    padding-top: calc(var(--section-space) - calc(var(--space) * 2));
+    padding-bottom: calc(var(--section-space) - calc(var(--space) * 2));
+  }
+
+  .header__container {
+    gap: calc(var(--space) / 2);
+  }
+
+  .header__top {
+    align-items: flex-start;
+  }
+
+  .header__bottom {
+    flex-wrap: wrap;
+    gap: var(--space);
+    justify-content: flex-start;
+  }
+
+  .header__gnb {
+    width: 100%;
+  }
+
+  .header__gnb-list {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px calc(var(--space) * 2);
+  }
+
+  .header__lang-btn {
+    margin-left: 0;
+  }
+
+  .sub-hero {
+    height: clamp(480px, 68svh, 860px);
+    min-height: clamp(480px, 68svh, 860px);
+  }
+
+  .sub-hero__overlay,
+  .sub-hero__container {
+    min-height: clamp(480px, 68svh, 860px);
+  }
+
+  .title-h2 {
+    font-size: 56px;
+  }
+
+  .sub-about__container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: calc(var(--space) * 3);
+  }
+
+  .sub-about__text {
+    order: 1;
+  }
+
+  .sub-about__media {
+    order: 2;
+    flex: none;
+    width: 100%;
+    max-width: min(730px, 100%);
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    aspect-ratio: 730 / 461;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding-left: var(--space);
+    padding-right: var(--space);
+  }
+
+  .sub-main {
+    padding-top: 0;
+  }
+
+  .section_padding {
+    padding-top: calc(var(--section-space) - calc(var(--space) * 4));
+    padding-bottom: calc(var(--section-space) - calc(var(--space) * 4));
+  }
+
+  .header__lang-btn,
+  .header__gnb-list a,
+  .header__reserve-btn {
+    font-size: 16px;
+  }
+
+  .header__logo {
+    font-size: 38px;
+  }
+
+  .header__reserve-btn {
+    padding: 10px 12px;
+  }
+
+  .header__bottom {
+    display: none;
+  }
+
+  .header__actions {
+    gap: calc(var(--space) / 2);
+  }
+
+  .header__lang-btn {
+    margin-left: 0;
+  }
+
+  .header__menu-btn {
+    display: inline-flex;
+  }
+
+  .header__mobile-menu {
+    display: none;
+    margin-top: var(--space);
+    padding-top: var(--space);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+  }
+
+  .main-header.is-menu-open .header__mobile-menu {
+    display: block;
+  }
+
+  .header__mobile-gnb-list {
+    display: grid;
+    gap: 10px;
+  }
+
+  .header__mobile-gnb-list a,
+  .header__mobile-reserve-btn {
+    font-family: "Jeju Myeongjo", serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--color-white);
+  }
+
+  .header__mobile-reserve-btn {
+    margin-top: var(--space);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space);
+    padding: 10px 12px;
+    border: 1px solid var(--color-white);
+    line-height: 1;
+  }
+
+  .sub-hero {
+    --sub-hero-height: min(860px, calc(100svh - var(--space)));
+    --sub-hero-header-clear: 96px;
+  }
+
+  .sub-hero__overlay,
+  .sub-hero__container {
+    min-height: var(--sub-hero-height);
+  }
+
+  .title-h2 {
+    font-size: 34px;
+  }
+
+  .sub-about__container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: calc(var(--space) * 2);
+  }
+
+  .sub-about__text {
+    order: 1;
+  }
+
+  .sub-about__media {
+    order: 2;
+    flex: none;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    aspect-ratio: 730 / 461;
+  }
+
+  .txt-light-p20,
+  .txt-bold-p20 {
+    font-size: 16px;
+  }
+
+  .txt-light-p25,
+  .txt-bold-p25 {
+    font-size: 20px;
+  }
+
+  .footer__upper {
+    flex-direction: column;
+    gap: calc(var(--space) * 2);
+  }
+
+  .footer__brand-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: calc(var(--space) * 2);
+  }
+
+  .footer__utility {
+    align-items: flex-start;
+  }
+
+  .footer__info br {
+    display: none;
+  }
+
+  .footer__info {
+    display: grid;
+    gap: 6px;
+  }
+
+  .footer__lower {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space);
+  }
+}

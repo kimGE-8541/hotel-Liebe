@@ -1,5 +1,176 @@
 @import url(common.css);
 
+.sub-hero {
+  --sub-hero-image: url(../images/sustainability-kv.png);
+}
+
+/* Sustainability only */
+.sub-philosophy {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  min-height: min(70vh, 720px);
+}
+
+.sub-philosophy__media {
+  min-height: 320px;
+  overflow: hidden;
+}
+
+.sub-philosophy__media img {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+  display: block;
+}
+
+.sub-philosophy__panel {
+  background-color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-left: calc(var(--space) * 2);
+  padding-right: calc((100vw - min(100vw, var(--content-width))) / 2 + 105px);
+}
+
+.sub-philosophy__inner {
+  max-width: min(740px, calc(50vw - var(--space) * 2));
+  text-align: left;
+}
+
+.sub-practices__header {
+  text-align: center;
+}
+
+.sub-practices__grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--gutter);
+}
+
+.sub-practices__card {
+  grid-column: span 4;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  min-height: 520px;
+  overflow: hidden;
+  background-color: var(--color-secondary);
+}
+
+.sub-practices__media {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.sub-practices__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sub-practices__body {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space) * 2);
+  padding: calc(var(--space) * 2) calc(var(--space) * 2) calc(var(--space) * 4);
+  min-height: 0;
+}
+
+.sub-practices__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space);
+}
+
+.sub-practices__arrow {
+  flex-shrink: 0;
+  font-family: "Jeju Myeongjo", serif;
+  font-size: 28px;
+  line-height: 1;
+  color: var(--color-primary);
+}
+
+@media (max-width: 1439px) {
+  .sub-philosophy__inner {
+    max-width: min(640px, calc(45vw));
+  }
+}
+
+@media (max-width: 1280px) {
+  .sub-philosophy {
+    min-height: min(60vh, 640px);
+  }
+
+  .sub-philosophy__inner {
+    max-width: min(560px, calc(48vw - var(--space)));
+  }
+}
+
+@media (max-width: 1024px) {
+  .sub-philosophy {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .sub-philosophy__media {
+    min-height: 260px;
+    order: 1;
+  }
+
+  .sub-philosophy__panel {
+    order: 2;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: calc(var(--space) * 4) calc(var(--space) * 2);
+    padding-right: calc(var(--space) * 2);
+  }
+
+  .sub-philosophy__inner {
+    max-width: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .sub-philosophy {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .sub-philosophy__media {
+    min-height: 220px;
+    order: 1;
+  }
+
+  .sub-philosophy__panel {
+    order: 2;
+    justify-content: flex-start;
+    align-items: center;
+    padding: calc(var(--space) * 4) var(--space);
+  }
+
+  .sub-philosophy__inner {
+    max-width: none;
+    width: 100%;
+  }
+
+  .sub-practices__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sub-practices__card {
+    grid-column: span 1;
+    min-height: 420px;
+  }
+
+  .sub-practices__arrow {
+    font-size: 22px;
+  }
+}
+@import url(common.css);
+
 *,
 *::before,
 *::after {
@@ -140,7 +311,7 @@
   --sub-hero-header-clear: 120px;
   height: var(--sub-hero-height);
   min-height: var(--sub-hero-height);
-  background-image: url(../images/sustainability-kv.png);
+  background-image: var(--sub-hero-image, url(../images/sustainability-kv.png));
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

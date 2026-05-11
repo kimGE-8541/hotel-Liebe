@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Liebe | Reservation</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="../assets/css/reservation.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container header__container">
+            <div class="header__top">
+                <h1 class="header__logo logo"><a href="../index.html">Liebe</a></h1>
+                <div class="header__actions">
+                    <button type="button" class="header__lang-btn">KR</button>
+                    <button type="button" class="header__menu-btn" aria-label="메뉴 열기" aria-expanded="false">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
+            </div>
+            <div class="header__bottom">
+                <nav class="header__gnb" aria-label="주요 메뉴">
+                    <ul class="header__gnb-list">
+                        <li><a href="./rooms.html">Rooms</a></li>
+                        <li><a href="./dining.html">Dining</a></li>
+                        <li><a href="./facilities.html">Facilities</a></li>
+                        <li><a href="./sustainability.html">Sustainability</a></li>
+                        <li><a href="./gallery.html">Gallery</a></li>
+                        <li><a href="./about.html">About</a></li>
+                    </ul>
+                </nav>
+                <a class="header__reserve-btn" href="./reservation.html">
+                    <span>Reservation</span>
+                    <span aria-hidden="true" class="header__reserve-arrow">></span>
+                </a>
+            </div>
+            <div class="header__mobile-menu" aria-hidden="true">
+                <nav class="header__mobile-gnb" aria-label="모바일 주요 메뉴">
+                    <ul class="header__mobile-gnb-list">
+                        <li><a href="./rooms.html">Rooms</a></li>
+                        <li><a href="./dining.html">Dining</a></li>
+                        <li><a href="./facilities.html">Facilities</a></li>
+                        <li><a href="./sustainability.html">Sustainability</a></li>
+                        <li><a href="./gallery.html">Gallery</a></li>
+                        <li><a href="./about.html">About</a></li>
+                    </ul>
+                </nav>
+                <a class="header__mobile-reserve-btn" href="./reservation.html">
+                    <span>Reservation</span>
+                    <span aria-hidden="true" class="header__reserve-arrow">></span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="sub-main reservation-main">
+        <section class="reservation__section">
+            <div class="container">
+                <div class="reservation__card">
+                    <h2 class="title-h2 fc-primary gsap-reveal">Reservation</h2>
+                    <p class="txt-light-p25 fc-primary mt-30 gsap-reveal">
+                        원하시는 일정과 객실 타입을 선택해<br>
+                        리에베에서의 머무름을 예약해보세요.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" aria-label="사이트 푸터">
+        <div class="container footer__container">
+            <div class="footer__upper">
+                <div class="footer__brand-group">
+                    <h2 class="footer__logo logo fc-white">Liebe</h2>
+                    <address class="footer__info footer__txt-light">
+                        주식회사 리에베 | 대표이사 김리베<br>
+                        서울특별시 ○○구 ○○로 00<br>
+                        대표번호: 02-1234-5678 | 이메일: info@hotel.com <br>
+                        사업자등록번호 : 123-456-7890
+                    </address>
+                </div>
+
+                <nav class="footer__utility" aria-label="푸터 유틸리티 메뉴">
+                    <a class="footer__menu-link footer__txt-bold" href="#">FAQ</a>
+                    <a class="footer__menu-link footer__txt-bold" href="#">문의하기</a>
+                    <a class="footer__menu-link footer__txt-bold" href="#">이용약관</a>
+                    <a class="footer__menu-link footer__txt-bold" href="#">개인정보처리방침</a>
+                </nav>
+            </div>
+
+            <hr class="footer__line">
+
+            <div class="footer__lower">
+                <p class="footer__txt-light">© 2026 Hotel Liebe. All Rights Reserved.</p>
+                <div class="footer__sns" aria-label="소셜 미디어 링크">
+                    <a class="footer__sns-link footer__txt-bold" href="#" aria-label="Instagram">
+                        <img src="../assets/images/icon/instagram.svg" alt="Instagram">
+                    </a>
+                    <a class="footer__sns-link footer__txt-bold" href="#" aria-label="KakaoTalk">
+                        <img src="../assets/images/icon/kakaotalk.svg" alt="KakaoTalk">
+                    </a>
+                    <a class="footer__sns-link footer__txt-bold" href="#" aria-label="Facebook">
+                        <img src="../assets/images/icon/facebook.svg" alt="Facebook">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/sustainability.js"></script>
+</body>
+
+</html>

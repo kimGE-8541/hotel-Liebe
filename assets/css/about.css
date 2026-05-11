@@ -1,0 +1,5 @@
+@import url(common.css);
+
+.sub-hero {
+  --sub-hero-image: url(../images/about-kv.png);
+}

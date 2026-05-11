@@ -1,0 +1,26 @@
+@import url(common.css);
+
+.reservation-main {
+  padding-top: 180px;
+}
+
+.reservation__section {
+  padding-bottom: var(--section-space);
+}
+
+.reservation__card {
+  max-width: 980px;
+  margin: 0 auto;
+  background-color: var(--color-secondary);
+  padding: calc(var(--space) * 4);
+}
+
+@media (max-width: 767px) {
+  .reservation-main {
+    padding-top: 120px;
+  }
+
+  .reservation__card {
+    padding: calc(var(--space) * 2);
+  }
+}
