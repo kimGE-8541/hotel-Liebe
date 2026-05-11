@@ -118,12 +118,12 @@
 
         <section class="room section_padding" aria-label="객실 소개">
             <div class="container">
-                <div class="room__tabs title-h3 fc-primary" role="tablist" aria-label="객실 타입 선택">
-                    <button type="button" class="room__tab is-active gsap-reveal" data-tab="standard" role="tab"
+                <div class="room__tabs title-h3 fc-primary gsap-reveal" role="tablist" aria-label="객실 타입 선택">
+                    <button type="button" class="room__tab is-active" data-tab="standard" role="tab"
                         aria-selected="true">Standard</button>
-                    <button type="button" class="room__tab gsap-reveal" data-tab="deluxe" role="tab"
+                    <button type="button" class="room__tab" data-tab="deluxe" role="tab"
                         aria-selected="false">Deluxe</button>
-                    <button type="button" class="room__tab gsap-reveal" data-tab="suite" role="tab" aria-selected="false">Suite</button>
+                    <button type="button" class="room__tab" data-tab="suite" role="tab" aria-selected="false">Suite</button>
                 </div>
 
                 <div class="room__body">
@@ -226,13 +226,19 @@
                             <img src="assets/images/facilities-1.png" alt="수영장 시설 이미지">
                         </div>
                         <div class="facilities__content">
-                            <p class="facilities__category txt-light-p20 fc-white">수영장</p>
-                            <h3 class="facilities__name title-h3 fc-white">Swimming Pool</h3>
-                            <p class="facilities__description txt-light-p20 fc-white">도심 속에서 즐기는<br>
-                                여유로운 수영 공간입니다.<br>
-                                차분한 분위기 속에서<br>
-                                온전한 휴식을 누릴 수 있습니다.</p>
-                            <a class="facilities__more txt-light-p20 fc-white" href="#">view more &gt;</a>
+                            <div class="facilities__lift">
+                                <p class="facilities__category txt-light-p20 fc-white">수영장</p>
+                                <h3 class="facilities__name title-h3 fc-white">Swimming Pool</h3>
+                                <div class="facilities__body">
+                                    <div class="facilities__body-inner">
+                                        <p class="facilities__description txt-light-p20 fc-white">도심 속에서 즐기는<br>
+                                            여유로운 수영 공간입니다.<br>
+                                            차분한 분위기 속에서<br>
+                                            온전한 휴식을 누릴 수 있습니다.</p>
+                                        <a class="facilities__more txt-light-p20 fc-white" href="#">view more &gt;</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </article>
 
@@ -241,11 +247,17 @@
                             <img src="assets/images/facilities-2.png" alt="스파 시설 이미지">
                         </div>
                         <div class="facilities__content">
-                            <p class="facilities__category txt-light-p20 fc-white">스파</p>
-                            <h3 class="facilities__name title-h3 fc-white">Premium Spa</h3>
-                            <p class="facilities__description txt-light-p20 fc-white">몸과 마음의 균형을 되찾는<br>힐링 공간입니다.<br>
-                                섬세한 케어로<br>깊은 휴식을 선사합니다.</p>
-                            <a class="facilities__more txt-light-p20 fc-white" href="#">view more &gt;</a>
+                            <div class="facilities__lift">
+                                <p class="facilities__category txt-light-p20 fc-white">스파</p>
+                                <h3 class="facilities__name title-h3 fc-white">Premium Spa</h3>
+                                <div class="facilities__body">
+                                    <div class="facilities__body-inner">
+                                        <p class="facilities__description txt-light-p20 fc-white">몸과 마음의 균형을 되찾는<br>힐링 공간입니다.<br>
+                                            섬세한 케어로<br>깊은 휴식을 선사합니다.</p>
+                                        <a class="facilities__more txt-light-p20 fc-white" href="#">view more &gt;</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </article>
 
@@ -254,11 +266,17 @@
                             <img src="assets/images/facilities-3.png" alt="피트니스 시설 이미지">
                         </div>
                         <div class="facilities__content">
-                            <p class="facilities__category txt-light-p20 fc-white">피트니스</p>
-                            <h3 class="facilities__name title-h3 fc-white">Fitness</h3>
-                            <p class="facilities__description txt-light-p20 fc-white">최적의 환경에서 건강한 일상을 <br>이어갈 수 있습니다. <br>
-                                프라이빗하고 쾌적한 공간을 <br>제공합니다.</p>
-                            <a class="facilities__more txt-light-p20 fc-white" href="#">view more &gt;</a>
+                            <div class="facilities__lift">
+                                <p class="facilities__category txt-light-p20 fc-white">피트니스</p>
+                                <h3 class="facilities__name title-h3 fc-white">Fitness</h3>
+                                <div class="facilities__body">
+                                    <div class="facilities__body-inner">
+                                        <p class="facilities__description txt-light-p20 fc-white">최적의 환경에서 건강한 일상을 <br>이어갈 수 있습니다. <br>
+                                            프라이빗하고 쾌적한 공간을 <br>제공합니다.</p>
+                                        <a class="facilities__more txt-light-p20 fc-white" href="#">view more &gt;</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </article>
 
@@ -267,13 +285,19 @@
                             <img src="assets/images/facilities-4.png" alt="루프탑 시설 이미지">
                         </div>
                         <div class="facilities__content">
-                            <p class="facilities__category txt-light-p20 fc-white">루프탑</p>
-                            <h3 class="facilities__name title-h3 fc-white">Rooftop</h3>
-                            <p class="facilities__description txt-light-p20 fc-white">도심의 전경을 한눈에<br>
-                                담을 수 있는 공간입니다.<br>
-                                여유로운 시간 속에서<br>
-                                특별한 순간을 경험해보세요.</p>
-                            <a class="facilities__more txt-light-p20 fc-white" href="#">view more &gt;</a>
+                            <div class="facilities__lift">
+                                <p class="facilities__category txt-light-p20 fc-white">루프탑</p>
+                                <h3 class="facilities__name title-h3 fc-white">Rooftop</h3>
+                                <div class="facilities__body">
+                                    <div class="facilities__body-inner">
+                                        <p class="facilities__description txt-light-p20 fc-white">도심의 전경을 한눈에<br>
+                                            담을 수 있는 공간입니다.<br>
+                                            여유로운 시간 속에서<br>
+                                            특별한 순간을 경험해보세요.</p>
+                                        <a class="facilities__more txt-light-p20 fc-white" href="#">view more &gt;</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </article>
                 </div>
@@ -288,6 +312,9 @@
             </div>
 
             <div class="scene__carousel-wrap mt-45 gsap-reveal">
+                <button type="button" class="scene__nav scene__nav--prev" aria-label="이전 갤러리">
+                    <span class="material-symbols-outlined" aria-hidden="true">keyboard_arrow_left</span>
+                </button>
                 <div class="swiper scene__swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide scene__slide">
@@ -307,6 +334,9 @@
                         </div>
                     </div>
                 </div>
+                <button type="button" class="scene__nav scene__nav--next" aria-label="다음 갤러리">
+                    <span class="material-symbols-outlined" aria-hidden="true">keyboard_arrow_right</span>
+                </button>
             </div>
         </section>
 

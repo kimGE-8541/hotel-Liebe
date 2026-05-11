@@ -5,21 +5,17 @@
     if (!header || !heroSection) return;
 
     const CLASS_PAST = "is-past-kv";
-    const MOBILE_MAX = 767;
+
+    const isPastHeroMidpoint = () => {
+      const rect = heroSection.getBoundingClientRect();
+      const midY = rect.top + rect.height * 0.5;
+      return midY <= 0;
+    };
 
     const update = () => {
-      if (window.innerWidth <= MOBILE_MAX) {
-        header.classList.remove(CLASS_PAST);
-        header.removeAttribute("aria-hidden");
-        return;
-      }
-
-      const past = heroSection.getBoundingClientRect().bottom <= 0;
-      header.classList.toggle(CLASS_PAST, past);
-      if (past) {
-        header.setAttribute("aria-hidden", "true");
-      } else {
-        header.removeAttribute("aria-hidden");
+      header.classList.toggle(CLASS_PAST, isPastHeroMidpoint());
+      if (typeof window.updateHeaderTopShift === "function") {
+        window.updateHeaderTopShift();
       }
     };
 

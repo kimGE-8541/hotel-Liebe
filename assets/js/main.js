@@ -184,13 +184,16 @@
 
     const CLASS_PAST = "is-past-kv";
 
+    const isPastHeroMidpoint = () => {
+      const rect = kvSection.getBoundingClientRect();
+      const midY = rect.top + rect.height * 0.5;
+      return midY <= 0;
+    };
+
     const update = () => {
-      const past = kvSection.getBoundingClientRect().bottom <= 0;
-      header.classList.toggle(CLASS_PAST, past);
-      if (past) {
-        header.setAttribute("aria-hidden", "true");
-      } else {
-        header.removeAttribute("aria-hidden");
+      header.classList.toggle(CLASS_PAST, isPastHeroMidpoint());
+      if (typeof window.updateHeaderTopShift === "function") {
+        window.updateHeaderTopShift();
       }
     };
 
@@ -203,9 +206,19 @@
     const roomSection = document.querySelector(".room");
     if (!roomSection) return;
 
+    const tabsRoot = roomSection.querySelector(".room__tabs");
     const tabButtons = Array.from(roomSection.querySelectorAll(".room__tab"));
     const panels = Array.from(roomSection.querySelectorAll(".room__panel"));
-    if (!tabButtons.length || !panels.length) return;
+    if (!tabsRoot || !tabButtons.length || !panels.length) return;
+
+    const updateTabIndicator = () => {
+      const activeTab = tabButtons.find((button) => button.classList.contains("is-active"));
+      if (!activeTab) return;
+      const rootRect = tabsRoot.getBoundingClientRect();
+      const activeRect = activeTab.getBoundingClientRect();
+      tabsRoot.style.setProperty("--room-tab-x", `${activeRect.left - rootRect.left}px`);
+      tabsRoot.style.setProperty("--room-tab-w", `${activeRect.width}px`);
+    };
 
     const activateTab = (tabName) => {
       tabButtons.forEach((button) => {
@@ -223,6 +236,8 @@
           panel.setAttribute("aria-hidden", "true");
         }
       });
+
+      updateTabIndicator();
     };
 
     tabButtons.forEach((button) => {
@@ -231,10 +246,15 @@
         activateTab(button.dataset.tab);
       });
     });
+
+    updateTabIndicator();
+    window.addEventListener("resize", updateTabIndicator);
   }
 
   function initializeSceneSwiper() {
     const sceneSwiper = document.querySelector(".scene__swiper");
+    const prevButton = document.querySelector(".scene__nav--prev");
+    const nextButton = document.querySelector(".scene__nav--next");
     if (!sceneSwiper || typeof Swiper === "undefined") return;
 
     new Swiper(sceneSwiper, {
@@ -246,6 +266,10 @@
       autoplay: {
         delay: 3000,
         disableOnInteraction: false,
+      },
+      navigation: {
+        prevEl: prevButton,
+        nextEl: nextButton,
       },
       speed: 700,
     });

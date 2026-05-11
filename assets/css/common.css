@@ -117,6 +117,70 @@
 /* Flex Grid Gap */
 .gap-20 { gap: var(--gutter); }
 
+/* Header: KV(또는 서브 히어로) 세로 중앙이 뷰포트 상단을 지난 뒤 — 메인·서브 공통 */
+.main-header.is-past-kv {
+  background-color: var(--color-primary);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.main-header.is-past-kv .header__logo,
+.main-header.is-past-kv .header__logo a {
+  color: var(--color-white);
+}
+
+.main-header.is-past-kv .header__lang-btn,
+.main-header.is-past-kv .header__gnb-list a,
+.main-header.is-past-kv .header__reserve-btn,
+.main-header.is-past-kv .header__mobile-gnb-list a,
+.main-header.is-past-kv .header__mobile-reserve-btn {
+  color: var(--color-white);
+}
+
+.main-header.is-past-kv .header__lang-btn {
+  border-bottom-color: var(--color-white);
+}
+
+.main-header.is-past-kv .header__reserve-btn,
+.main-header.is-past-kv .header__mobile-reserve-btn {
+  border-color: var(--color-white);
+}
+
+.main-header.is-past-kv .header__gnb-list a::after {
+  background-color: var(--color-white);
+}
+
+.main-header.is-past-kv .header__menu-btn {
+  color: var(--color-white);
+}
+
+.main-header.is-past-kv .header__mobile-menu {
+  border-top-color: rgba(255, 255, 255, 0.35);
+}
+
+/* 데스크톱: 컴팩트 시 .main-header 전체를 translateY로 위로 이동 */
+@media (min-width: 768px) {
+  .main-header {
+    transform: translateY(0);
+  }
+
+  .main-header.is-past-kv {
+    padding-top: calc(var(--space) / 2);
+    padding-bottom: calc(var(--space) / 2);
+    transform: translateY(calc(-1 * var(--header-slide-diff, 0px)));
+  }
+
+  .main-header.is-past-kv:hover,
+  .main-header.is-past-kv:focus-within {
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) and (prefers-reduced-motion: reduce) {
+  .main-header {
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* GSAP ScrollTrigger — 초기 상태(JS 로드 후 gsap.set으로도 설정) */
 @media (prefers-reduced-motion: no-preference) {
   .gsap-reveal {
