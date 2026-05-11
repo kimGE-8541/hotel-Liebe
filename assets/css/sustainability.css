@@ -7,7 +7,7 @@
 }
 
 .sub-main {
-  padding-top: 120px;
+  padding-top: 0;
 }
 
 /* Shared Header */
@@ -20,6 +20,13 @@
   background-color: rgba(0, 0, 0, 0.5);
   padding-top: var(--space);
   padding-bottom: var(--space);
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.main-header.is-past-kv {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .header__container {
@@ -127,41 +134,118 @@
 
 /* Sustainability Page Specific Sections */
 .sub-hero {
-  min-height: 70vh;
-  background-image: url(../images/sustainability.png);
+  --sub-hero-height: 860px;
+  --sub-hero-header-clear: 120px;
+  height: var(--sub-hero-height);
+  min-height: var(--sub-hero-height);
+  background-image: url(../images/sustainability-kv.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .sub-hero__overlay {
-  min-height: 70vh;
-  background-color: rgba(0, 0, 0, 0.35);
+  height: 100%;
+  min-height: var(--sub-hero-height);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .sub-hero__container {
-  min-height: 70vh;
+  height: 100%;
+  min-height: var(--sub-hero-height);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding-bottom: var(--section-space);
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: var(--sub-hero-header-clear);
+  padding-bottom: calc(var(--space) * 2);
+  text-align: left;
 }
 
-.sub-hero__title {
-  margin-top: calc(var(--space) * 2);
-  font-family: "Jeju Myeongjo", serif;
-  font-size: 100px;
-  line-height: 1;
-  font-weight: 400;
-  color: var(--color-white);
+.sub-hero__inner {
+  width: 100%;
+  max-width: 100%;
+  text-align: left;
 }
 
-.sub-intro {
+.sub-about__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(var(--space) * 4);
+}
+
+.sub-about__text {
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: left;
+}
+
+.sub-about__media {
+  flex: 0 0 730px;
+  width: 730px;
+  height: 461px;
+  overflow: hidden;
+}
+
+.sub-about__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Sustainability — practices (실천 방식) */
+.sub-practices__header {
+  text-align: center;
+}
+
+.sub-practices__grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--gutter);
+}
+
+.sub-practices__card {
+  grid-column: span 4;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  min-height: 520px;
+  overflow: hidden;
   background-color: var(--color-secondary);
 }
 
-.sub-intro__container {
-  text-align: center;
+.sub-practices__media {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.sub-practices__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sub-practices__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space);
+  padding: calc(var(--space) * 2) calc(var(--space) * 2) calc(var(--space) * 4);
+  min-height: 0;
+}
+
+.sub-practices__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space);
+}
+
+.sub-practices__arrow {
+  flex-shrink: 0;
+  font-family: "Jeju Myeongjo", serif;
+  font-size: 28px;
+  line-height: 1;
+  color: var(--color-primary);
 }
 
 /* Shared Footer */
@@ -268,14 +352,28 @@
     gap: calc(var(--space) * 2);
   }
 
-  .sub-hero__title {
-    font-size: 80px;
+  .sub-hero {
+    --sub-hero-header-clear: 110px;
+  }
+
+  .sub-about__container {
+    gap: calc(var(--space) * 3);
+  }
+
+  .sub-practices__card {
+    min-height: 480px;
   }
 }
 
 @media (max-width: 767px) {
+  .main-header.is-past-kv {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
   .sub-main {
-    padding-top: 105px;
+    padding-top: 0;
   }
 
   .section_padding {
@@ -330,23 +428,60 @@
     padding: 10px 12px;
   }
 
-  .sub-hero,
-  .sub-hero__overlay,
-  .sub-hero__container {
-    min-height: 62vh;
+  .sub-hero {
+    --sub-hero-height: min(860px, calc(100svh - var(--space)));
+    --sub-hero-header-clear: 96px;
   }
 
-  .sub-hero__title {
-    font-size: 48px;
+  .sub-hero__overlay,
+  .sub-hero__container {
+    min-height: var(--sub-hero-height);
   }
 
   .title-h2 {
     font-size: 34px;
   }
 
+  .sub-about__container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: calc(var(--space) * 2);
+  }
+
+  .sub-about__text {
+    order: 1;
+  }
+
+  .sub-about__media {
+    order: 2;
+    flex: none;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    aspect-ratio: 730 / 461;
+  }
+
+  .sub-practices__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sub-practices__card {
+    grid-column: span 1;
+    min-height: 420px;
+  }
+
+  .sub-practices__arrow {
+    font-size: 22px;
+  }
+
   .txt-light-p20,
   .txt-bold-p20 {
     font-size: 16px;
+  }
+
+  .txt-light-p25,
+  .txt-bold-p25 {
+    font-size: 20px;
   }
 
   .footer__upper {

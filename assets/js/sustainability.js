@@ -1,4 +1,33 @@
 (function () {
+  function initializeHeaderPastSubHero() {
+    const header = document.querySelector(".main-header");
+    const heroSection = document.querySelector(".sub-hero");
+    if (!header || !heroSection) return;
+
+    const CLASS_PAST = "is-past-kv";
+    const MOBILE_MAX = 767;
+
+    const update = () => {
+      if (window.innerWidth <= MOBILE_MAX) {
+        header.classList.remove(CLASS_PAST);
+        header.removeAttribute("aria-hidden");
+        return;
+      }
+
+      const past = heroSection.getBoundingClientRect().bottom <= 0;
+      header.classList.toggle(CLASS_PAST, past);
+      if (past) {
+        header.setAttribute("aria-hidden", "true");
+      } else {
+        header.removeAttribute("aria-hidden");
+      }
+    };
+
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+  }
+
   function initializeMobileMenu() {
     const header = document.querySelector(".main-header");
     const menuButton = document.querySelector(".header__menu-btn");
@@ -27,5 +56,6 @@
     });
   }
 
+  initializeHeaderPastSubHero();
   initializeMobileMenu();
 })();
