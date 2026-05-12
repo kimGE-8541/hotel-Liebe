@@ -86,10 +86,14 @@
 
 .sub-practices__arrow {
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-family: "Jeju Myeongjo", serif;
   font-size: 28px;
   line-height: 1;
   color: var(--color-primary);
+  text-decoration: none;
 }
 
 @media (max-width: 1439px) {

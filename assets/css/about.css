@@ -3,3 +3,68 @@
 .sub-hero {
   --sub-hero-image: url(../images/about-kv.png);
 }
+
+.brand-story {
+  background-color: var(--color-primary);
+}
+
+.brand-story .container {
+  display: flex;
+  justify-content: center;
+}
+
+.brand-story__box {
+  position: relative;
+  width: min(100%, 1480px);
+  margin-top: calc(var(--space) * 2);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  padding: calc(var(--space) * 6) calc(var(--space) * 6) calc(var(--space) * 5);
+  text-align: center;
+}
+
+.brand-story__heading {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  padding-inline: calc(var(--space) * 2);
+  background-color: var(--color-primary);
+  white-space: nowrap;
+}
+
+.brand-story__description {
+  max-width: 1480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space);
+}
+
+@media (max-width: 1280px) {
+  .brand-story__box {
+    width: min(100%, 980px);
+    padding: calc(var(--space) * 5) calc(var(--space) * 4) calc(var(--space) * 4);
+  }
+
+  .brand-story__description {
+    max-width: 680px;
+  }
+}
+
+@media (max-width: 767px) {
+  .brand-story__box {
+    margin-top: var(--space);
+    padding: calc(var(--space) * 4) calc(var(--space) * 1.5) calc(var(--space) * 3);
+  }
+
+  .brand-story__heading {
+    padding-inline: var(--space);
+  }
+
+  .brand-story__description {
+    max-width: none;
+    font-size: 18px;
+    line-height: 1.7;
+  }
+}
