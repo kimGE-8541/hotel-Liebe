@@ -247,6 +247,29 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.about .section_padding,
+.sustainability .section_padding {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 420px;
+}
+
+.about .txt-light-p25,
+.sustainability .txt-light-p25 {
+  max-width: 640px;
+}
+
+.about .title-h2 + .txt-light-p25,
+.sustainability .title-h2 + .txt-light-p25 {
+  margin-top: calc(var(--space) * 2);
+}
+
+.about .txt-light-p25 + .txt-light-p25,
+.sustainability .txt-light-p25 + .txt-light-p25 {
+  margin-top: var(--space);
+}
+
 /* sustainability */
 
 .sustainability {
@@ -429,6 +452,18 @@
   transform: translate3d(0, 20px, 0);
 }
 
+.facilities__category {
+  display: block;
+  max-height: 32px;
+  overflow: hidden;
+  opacity: 1;
+  clip-path: inset(0 0 0 0);
+  transition:
+    max-height 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    clip-path 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.28s ease;
+}
+
 .facilities__name {
   margin-top: calc(var(--space) / 2);
   margin-bottom: 0;
@@ -473,6 +508,13 @@
 .facilities__card:hover .facilities__lift,
 .facilities__card:focus-within .facilities__lift {
   transform: translate3d(0, 0, 0);
+}
+
+.facilities__card:hover .facilities__category,
+.facilities__card:focus-within .facilities__category {
+  max-height: 0;
+  clip-path: inset(0 0 100% 0);
+  opacity: 0;
 }
 
 .facilities__card:hover .facilities__body,
@@ -707,13 +749,18 @@
 }
 
 @media (max-width: 1280px) {
+  .main-header {
+    padding-top: calc(var(--space) * 1.25);
+    padding-bottom: calc(var(--space) * 1.1);
+  }
+
   .section_padding {
     padding-top: calc(var(--section-space) - calc(var(--space) * 2));
     padding-bottom: calc(var(--section-space) - calc(var(--space) * 2));
   }
 
   .header__container {
-    gap: calc(var(--space) / 2);
+    gap: calc(var(--space) * 0.75);
   }
 
   .header__top {
@@ -721,19 +768,30 @@
   }
 
   .header__bottom {
-    flex-wrap: wrap;
-    gap: var(--space);
-    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: clamp(10px, 1.2vw, var(--space));
+    justify-content: space-between;
   }
 
   .header__gnb {
-    width: 100%;
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 0;
   }
 
   .header__gnb-list {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: flex-start;
-    gap: 10px calc(var(--space) * 2);
+    gap: clamp(10px, 1.35vw, calc(var(--space) * 1.5));
+  }
+
+  .header__gnb-list a {
+    white-space: nowrap;
+  }
+
+  .header__reserve-btn {
+    flex-shrink: 0;
   }
 
   .header__lang-btn {
@@ -753,6 +811,21 @@
   .about .txt-light-p25,
   .sustainability .txt-light-p25 {
     font-size: 22px;
+  }
+
+  .about,
+  .sustainability {
+    background-attachment: scroll;
+  }
+
+  .about .section_padding,
+  .sustainability .section_padding {
+    min-height: 360px;
+  }
+
+  .about .txt-light-p25,
+  .sustainability .txt-light-p25 {
+    max-width: 560px;
   }
 
   .title-h2 {
@@ -845,6 +918,11 @@
 }
 
 @media (max-width: 767px) {
+  .main-header {
+    padding-top: var(--space);
+    padding-bottom: var(--space);
+  }
+
   .container {
     padding-left: var(--space);
     padding-right: var(--space);
@@ -875,6 +953,10 @@
 
   .header__actions {
     gap: calc(var(--space) / 2);
+  }
+
+  .header__top {
+    align-items: center;
   }
 
   .header__menu-btn {
@@ -945,6 +1027,29 @@
     font-size: 20px;
   }
 
+  .about .section_padding,
+  .sustainability .section_padding {
+    min-height: 300px;
+    justify-content: flex-end;
+  }
+
+  .about .txt-light-p25,
+  .sustainability .txt-light-p25 {
+    max-width: 22ch;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .about .title-h2 + .txt-light-p25,
+  .sustainability .title-h2 + .txt-light-p25 {
+    margin-top: calc(var(--space) * 1.5);
+  }
+
+  .about .txt-light-p25 + .txt-light-p25,
+  .sustainability .txt-light-p25 + .txt-light-p25 {
+    margin-top: 12px;
+  }
+
   .txt-light-p20,
   .txt-bold-p20 {
     font-size: 16px;
@@ -969,9 +1074,9 @@
   }
 
   .facilities__content {
-    left: var(--space);
-    right: var(--space);
-    bottom: var(--space);
+    left: calc(var(--space) * 2);
+    right: calc(var(--space) * 2);
+    bottom: calc(var(--space) * 2);
   }
 
   .facilities__card {
