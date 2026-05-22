@@ -196,12 +196,15 @@
   padding-top: var(--space);
   padding-bottom: var(--space);
 <<<<<<< HEAD
+<<<<<<< HEAD
   transition:
     transform 0.45s cubic-bezier(0.4, 0, 0.2, 1),
     background-color 0.35s ease,
     box-shadow 0.35s ease,
     padding-top 0.35s ease,
     padding-bottom 0.35s ease;
+=======
+>>>>>>> parent of 9bbdb86 (sustainability 구현중)
 =======
 >>>>>>> parent of 9bbdb86 (sustainability 구현중)
 }
@@ -315,11 +318,16 @@
 /* Sustainability Page Specific Sections */
 .sub-hero {
 <<<<<<< HEAD
+<<<<<<< HEAD
   --sub-hero-height: 860px;
   --sub-hero-header-clear: 120px;
   height: var(--sub-hero-height);
   min-height: var(--sub-hero-height);
   background-image: var(--sub-hero-image, url(../images/sustainability-kv.png));
+=======
+  min-height: 70vh;
+  background-image: url(../images/sustainability.png);
+>>>>>>> parent of 9bbdb86 (sustainability 구현중)
 =======
   min-height: 70vh;
   background-image: url(../images/sustainability.png);
@@ -351,6 +359,7 @@
   color: var(--color-white);
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 .sub-about__container {
   display: flex;
@@ -465,6 +474,14 @@
   font-size: 28px;
   line-height: 1;
   color: var(--color-primary);
+=======
+.sub-intro {
+  background-color: var(--color-secondary);
+}
+
+.sub-intro__container {
+  text-align: center;
+>>>>>>> parent of 9bbdb86 (sustainability 구현중)
 =======
 .sub-intro {
   background-color: var(--color-secondary);
@@ -590,6 +607,7 @@
     gap: calc(var(--space) * 2);
   }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   .sub-hero {
     --sub-hero-header-clear: 110px;
@@ -719,16 +737,23 @@
   .sub-hero__title {
     font-size: 80px;
 >>>>>>> parent of 9bbdb86 (sustainability 구현중)
+=======
+  .sub-hero__title {
+    font-size: 80px;
+>>>>>>> parent of 9bbdb86 (sustainability 구현중)
   }
 }
 
 @media (max-width: 767px) {
+<<<<<<< HEAD
 <<<<<<< HEAD
   .container {
     padding-left: var(--space);
     padding-right: var(--space);
   }
 
+=======
+>>>>>>> parent of 9bbdb86 (sustainability 구현중)
 =======
 >>>>>>> parent of 9bbdb86 (sustainability 구현중)
   .sub-main {
@@ -819,6 +844,7 @@
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   .sub-about__container {
     flex-direction: column;
     align-items: stretch;
@@ -873,6 +899,8 @@
     font-size: 22px;
   }
 
+=======
+>>>>>>> parent of 9bbdb86 (sustainability 구현중)
 =======
 >>>>>>> parent of 9bbdb86 (sustainability 구현중)
   .txt-light-p20,
