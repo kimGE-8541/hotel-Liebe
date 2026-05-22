@@ -10,6 +10,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   padding-top: var(--space);
   padding-bottom: var(--space);
+<<<<<<< HEAD
   transition:
     transform 0.45s cubic-bezier(0.4, 0, 0.2, 1),
     background-color 0.35s ease,
@@ -22,6 +23,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
+=======
+>>>>>>> parent of a0c9eb0 (메인페이지 완료)
 }
 
 .header__container {
@@ -45,6 +48,7 @@
   width: 1480px;
 }
 
+<<<<<<< HEAD
 .header__logo a {
   color: inherit;
   text-decoration: none;
@@ -56,6 +60,8 @@
   gap: var(--space);
 }
 
+=======
+>>>>>>> parent of a0c9eb0 (메인페이지 완료)
 .header__lang-btn,
 .header__gnb-list a,
 .header__reserve-btn {
@@ -72,15 +78,6 @@
   margin-left: calc(var(--space) * 3);
 }
 
-.header__menu-btn {
-  display: none;
-  width: 30px;
-  height: 30px;
-  color: var(--color-white);
-  align-items: center;
-  justify-content: center;
-}
-
 
 .header__gnb-list {
   width: 1480px;
@@ -88,31 +85,6 @@
   align-items: center;
   justify-content: center;
   gap: calc(var(--space) * 4);
-}
-
-.header__gnb-list a {
-  position: relative;
-  display: inline-block;
-  padding-bottom: 4px;
-}
-
-.header__gnb-list a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
-  background-color: var(--color-white);
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform 0.25s ease;
-}
-
-.header__gnb-list a:hover::after,
-.header__gnb-list a:focus-visible::after,
-.header__gnb-list a:active::after {
-  transform: scaleX(1);
 }
 
 .header__reserve-btn {
@@ -124,10 +96,6 @@
   line-height: 1;
 }
 
-.header__mobile-menu {
-  display: none;
-}
-
 /* Key Visual */
 .kv {
   position: relative;
@@ -135,11 +103,10 @@
   max-height: 100vh;
   overflow: hidden;
   background-color: #000000;
-  clip-path: inset(0);
 }
 
 .kv__video {
-  position: fixed;
+  position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
@@ -240,24 +207,9 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
 .about_overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-/* sustainability */
-
-.sustainability {
-  background-image: url(../images/sustainability.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
-.sustainability_overlay {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -306,43 +258,21 @@
 }
 
 .room__body {
-  min-height: 735px;
-}
-
-.room__panel-wrapper {
-  position: relative;
-  min-height: 735px;
-}
-
-.room__panel {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-.room__panel.is-active {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
+  min-height: 555px;
 }
 
 .room__display {
   display: flex;
-  min-height: 735px;
   padding-right: 105px;
   justify-content: space-between;
   gap: calc(var(--space) * 2);
 }
 
 .room__media {
-  flex: 0 0 980px;
-  width: 980px;
   aspect-ratio: 4 / 3;
-  height: auto;
+  max-width: 980px;
   overflow: hidden;
+  transition: opacity 0.3s ease;
 }
 
 .room__media img {
@@ -352,12 +282,15 @@
 }
 
 .room__content {
-  flex: 0 0 290px;
-  width: 290px;
-  min-height: 735px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  transition: opacity 0.3s ease;
+}
+
+.room__media.is-fading,
+.room__content.is-fading {
+  opacity: 0;
 }
 
 .room__view-more {
@@ -365,6 +298,7 @@
   border-bottom: 1px solid var(--color-primary);
 }
 
+<<<<<<< HEAD
 .dining__display {
   padding-right: 0;
   padding-left: 105px;
@@ -759,6 +693,9 @@
     font-size: 56px;
   }
 
+=======
+@media (max-width: 1279px) {
+>>>>>>> parent of a0c9eb0 (메인페이지 완료)
   .room__tab {
     font-size: 32px;
   }
@@ -767,84 +704,20 @@
     min-height: 720px;
   }
 
-  .room__panel-wrapper {
-    min-height: 720px;
-  }
-
-  .room__panel {
-    position: static;
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    display: none;
-    transition: none;
-  }
-
-  .room__panel.is-active {
-    display: block;
-  }
-
   .room__display {
     flex-direction: column;
-    height: auto;
     padding-right: 0;
-    padding-left: 0;
     gap: calc(var(--space) * 2);
-  }
-
-  .dining__display {
-    padding-left: 0;
-    flex-direction: column-reverse;
-  }
-
-  .dining__display .room__content {
-    width: 100%;
-    flex: 0 1 auto;
-  }
-
-  .facilities__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .scene__slide {
-    width: min(980px, 86vw);
-    max-width: 980px;
-    height: auto;
-    aspect-ratio: 980 / 744;
-  }
-
-  .scene__swiper {
-    padding-left: var(--space);
-    padding-right: var(--space);
-  }
-
-  .room__media {
-    flex: 0 1 auto;
-    width: 100%;
-    max-width: none;
-    height: auto;
-  }
-
-  .room__content {
-    flex: 0 1 auto;
-    width: 100%;
-    max-width: none;
-    min-height: 0;
-    height: auto;
-    justify-content: flex-start;
   }
 
   .room__title {
     font-size: 50px;
     margin-bottom: var(--space);
   }
-
-  .facilities__card {
-    height: 420px;
-  }
 }
 
 @media (max-width: 767px) {
+<<<<<<< HEAD
   .container {
     padding-left: var(--space);
     padding-right: var(--space);
@@ -950,6 +823,8 @@
     font-size: 16px;
   }
 
+=======
+>>>>>>> parent of a0c9eb0 (메인페이지 완료)
   .room__tabs {
     gap: var(--space);
     margin-bottom: calc(var(--space) * 2);
@@ -960,6 +835,7 @@
     padding: 8px 14px;
   }
 
+<<<<<<< HEAD
   .room__display {
     gap: var(--space);
   }
@@ -1036,6 +912,8 @@
     gap: 6px;
   }
 
+=======
+>>>>>>> parent of a0c9eb0 (메인페이지 완료)
   .room__body {
     min-height: 640px;
   }
@@ -1047,9 +925,4 @@
   .room__view-more {
     font-size: 18px;
   }
-
-  .footer__logo {
-    font-size: 40px;
-  }
-
 }
