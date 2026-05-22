@@ -231,6 +231,18 @@
   background-color: var(--color-white);
   color: var(--color-primary);
   border: 1px solid var(--color-white);
+  text-decoration: none;
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.kv__cta:hover,
+.kv__cta:focus-visible {
+  background-color: transparent;
+  color: var(--color-white);
+  border-color: var(--color-white);
 }
 
 /* about */
@@ -536,21 +548,34 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 5;
-  width: 52px;
-  height: 52px;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.35);
+  width: auto;
+  height: auto;
+  padding: var(--space);
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
   color: var(--color-white);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-.scene__nav .material-symbols-outlined {
-  font-size: 34px;
-  line-height: 1;
+.scene__nav__icon {
+  display: block;
+  width: 48px;
+  height: 48px;
+  border-top: 2.5px solid currentColor;
+  border-right: 2.5px solid currentColor;
+}
+
+.scene__nav--prev .scene__nav__icon {
+  transform: rotate(-135deg);
+}
+
+.scene__nav--next .scene__nav__icon {
+  transform: rotate(45deg);
 }
 
 .scene__nav--prev {
@@ -563,9 +588,11 @@
 
 .scene__nav:hover,
 .scene__nav:focus-visible {
-  background-color: rgba(124, 89, 76, 0.9);
-  border-color: rgba(255, 255, 255, 1);
-  transform: translateY(-50%) scale(1.03);
+  background-color: transparent;
+  border: none;
+  color: var(--color-white);
+  transform: translateY(-50%) scale(1.06);
+  opacity: 0.85;
 }
 
 .scene__swiper {
@@ -1089,12 +1116,13 @@
   }
 
   .scene__nav {
-    width: 42px;
-    height: 42px;
+    padding: calc(var(--space) / 2);
   }
 
-  .scene__nav .material-symbols-outlined {
-    font-size: 28px;
+  .scene__nav__icon {
+    width: 36px;
+    height: 36px;
+    border-width: 2px;
   }
 
   .scene__nav--prev {

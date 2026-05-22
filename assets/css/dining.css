@@ -3,3 +3,70 @@
 .sub-hero {
   --sub-hero-image: url(../images/dining-kv.png);
 }
+
+/* -------------------------------------------------------------------------- */
+/* Dining Intro */
+/* -------------------------------------------------------------------------- */
+.dining-intro {
+  background-color: var(--color-text);
+  text-align: center;
+}
+
+.dining-intro__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  max-width: var(--content-width);
+  margin-inline: auto;
+}
+
+.dining-intro__title {
+  margin: 0;
+}
+
+.dining-intro__desc {
+  margin: 0;
+  max-width: 680px;
+}
+
+@media (max-width: 1439px) {
+  .dining-intro__desc {
+    max-width: min(680px, 100%);
+    padding-inline: calc(var(--space) * 2);
+  }
+}
+
+@media (max-width: 1280px) {
+  .dining-intro__container {
+    gap: 30px;
+  }
+
+  .dining-intro__title {
+    font-size: 56px;
+  }
+
+  .dining-intro__desc {
+    font-size: 22px;
+    padding-inline: calc(var(--space) * 2);
+  }
+}
+
+@media (max-width: 767px) {
+  .dining-intro__container {
+    gap: 30px;
+    padding-inline: var(--space);
+  }
+
+  .dining-intro__title {
+    font-size: 34px;
+    line-height: 1.15;
+  }
+
+  .dining-intro__desc {
+    font-size: 20px;
+    line-height: 1.5;
+    max-width: none;
+    padding-inline: 0;
+  }
+}

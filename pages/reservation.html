@@ -60,14 +60,116 @@
     </header>
 
     <main class="sub-main reservation-main">
-        <section class="reservation__section">
-            <div class="container">
-                <div class="reservation__card">
-                    <h2 class="title-h2 fc-primary gsap-reveal">Reservation</h2>
-                    <p class="txt-light-p25 fc-primary mt-30 gsap-reveal">
-                        원하시는 일정과 객실 타입을 선택해<br>
-                        리에베에서의 머무름을 예약해보세요.
-                    </p>
+        <section class="reservation-process section_padding" aria-label="예약 진행 단계">
+            <div class="container reservation-process__container">
+                <h2 class="title-h1 reservation-process__title">Reservation</h2>
+                <nav class="reservation-process__steps" aria-label="예약 단계">
+                    <ol class="reservation-process__list">
+                        <li class="reservation-process__item is-active" aria-current="step">
+                            <div class="reservation-process__node">
+                                <span class="reservation-process__circle">1</span>
+                                <span class="reservation-process__label txt-light-p20">객실 선택</span>
+                            </div>
+                            <span class="reservation-process__line" aria-hidden="true"></span>
+                        </li>
+                        <li class="reservation-process__item">
+                            <div class="reservation-process__node">
+                                <span class="reservation-process__circle">2</span>
+                                <span class="reservation-process__label txt-light-p20">옵션 선택</span>
+                            </div>
+                            <span class="reservation-process__line" aria-hidden="true"></span>
+                        </li>
+                        <li class="reservation-process__item">
+                            <div class="reservation-process__node">
+                                <span class="reservation-process__circle">3</span>
+                                <span class="reservation-process__label txt-light-p20">정보 입력</span>
+                            </div>
+                            <span class="reservation-process__line" aria-hidden="true"></span>
+                        </li>
+                        <li class="reservation-process__item">
+                            <div class="reservation-process__node">
+                                <span class="reservation-process__circle">4</span>
+                                <span class="reservation-process__label txt-light-p20">예약 완료</span>
+                            </div>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <section class="reservation-filter" aria-label="예약 조건 선택">
+            <div class="container reservation-filter__container">
+                <div class="reservation-filter__bar">
+                    <div class="reservation-filter__field reservation-filter__field--date">
+                        <span class="reservation-filter__label txt-light-p20">일정 선택</span>
+                        <div class="reservation-filter__dropdown-wrap">
+                            <button type="button" class="reservation-filter__control reservation-filter__control--date" id="reservation-date-trigger" aria-expanded="false" aria-haspopup="dialog" aria-controls="reservation-calendar">
+                                <span class="reservation-filter__value txt-light-p25" id="reservation-date-value">2025.01.01~2025.12.31</span>
+                                <span class="material-symbols-outlined reservation-filter__icon" aria-hidden="true">calendar_month</span>
+                            </button>
+                            <div class="reservation-calendar" id="reservation-calendar" role="dialog" aria-label="일정 선택" hidden>
+                                <div class="reservation-calendar__header">
+                                    <button type="button" class="reservation-calendar__nav reservation-calendar__nav--prev" aria-label="이전 달">
+                                        <span class="material-symbols-outlined" aria-hidden="true">chevron_left</span>
+                                    </button>
+                                    <p class="reservation-calendar__month txt-light-p20" id="reservation-calendar-month"></p>
+                                    <button type="button" class="reservation-calendar__nav reservation-calendar__nav--next" aria-label="다음 달">
+                                        <span class="material-symbols-outlined" aria-hidden="true">chevron_right</span>
+                                    </button>
+                                </div>
+                                <div class="reservation-calendar__weekdays" aria-hidden="true">
+                                    <span>일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span>
+                                </div>
+                                <div class="reservation-calendar__days" id="reservation-calendar-days"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reservation-filter__field">
+                        <span class="reservation-filter__label txt-light-p20">객실 수</span>
+                        <div class="reservation-filter__dropdown-wrap">
+                            <button type="button" class="reservation-filter__control" id="reservation-rooms-trigger" aria-expanded="false" aria-haspopup="listbox" aria-controls="reservation-rooms-list">
+                                <span class="reservation-filter__value txt-light-p25" id="reservation-rooms-value">1개</span>
+                                <span class="material-symbols-outlined reservation-filter__icon" aria-hidden="true">keyboard_arrow_down</span>
+                            </button>
+                            <ul class="reservation-filter__menu" id="reservation-rooms-list" role="listbox" hidden>
+                                <li role="none"><button type="button" class="reservation-filter__menu-item txt-light-p25" role="option" data-value="1">1개</button></li>
+                                <li role="none"><button type="button" class="reservation-filter__menu-item txt-light-p25" role="option" data-value="2">2개</button></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="reservation-filter__field">
+                        <span class="reservation-filter__label txt-light-p20">성인</span>
+                        <div class="reservation-filter__dropdown-wrap">
+                            <button type="button" class="reservation-filter__control" id="reservation-adults-trigger" aria-expanded="false" aria-haspopup="listbox" aria-controls="reservation-adults-list">
+                                <span class="reservation-filter__value txt-light-p25" id="reservation-adults-value">1명</span>
+                                <span class="material-symbols-outlined reservation-filter__icon" aria-hidden="true">keyboard_arrow_down</span>
+                            </button>
+                            <ul class="reservation-filter__menu" id="reservation-adults-list" role="listbox" hidden>
+                                <li role="none"><button type="button" class="reservation-filter__menu-item txt-light-p25" role="option" data-value="1">1명</button></li>
+                                <li role="none"><button type="button" class="reservation-filter__menu-item txt-light-p25" role="option" data-value="2">2명</button></li>
+                                <li role="none"><button type="button" class="reservation-filter__menu-item txt-light-p25" role="option" data-value="3">3명</button></li>
+                                <li role="none"><button type="button" class="reservation-filter__menu-item txt-light-p25" role="option" data-value="4">4명</button></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="reservation-filter__field">
+                        <span class="reservation-filter__label txt-light-p20">어린이</span>
+                        <div class="reservation-filter__dropdown-wrap">
+                            <button type="button" class="reservation-filter__control" id="reservation-children-trigger" aria-expanded="false" aria-haspopup="listbox" aria-controls="reservation-children-list">
+                                <span class="reservation-filter__value txt-light-p25" id="reservation-children-value">1명</span>
+                                <span class="material-symbols-outlined reservation-filter__icon" aria-hidden="true">keyboard_arrow_down</span>
+                            </button>
+                            <ul class="reservation-filter__menu" id="reservation-children-list" role="listbox" hidden>
+                                <li role="none"><button type="button" class="reservation-filter__menu-item txt-light-p25" role="option" data-value="1">1명</button></li>
+                                <li role="none"><button type="button" class="reservation-filter__menu-item txt-light-p25" role="option" data-value="2">2명</button></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <button type="button" class="reservation-filter__submit txt-light-p25">객실 검색</button>
                 </div>
             </div>
         </section>
@@ -117,6 +219,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="../assets/js/common.js"></script>
     <script src="../assets/js/sustainability.js"></script>
+    <script src="../assets/js/reservation.js"></script>
 </body>
 
 </html>
