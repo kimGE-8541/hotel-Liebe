@@ -1,4 +1,5 @@
 (function () {
+<<<<<<< HEAD
   function initializeHeaderPastSubHero() {
     const header = document.querySelector(".main-header");
     const heroSection = document.querySelector(".sub-hero");
@@ -24,6 +25,8 @@
     window.addEventListener("resize", update);
   }
 
+=======
+>>>>>>> parent of 9bbdb86 (sustainability 구현중)
   function initializeMobileMenu() {
     const header = document.querySelector(".main-header");
     const menuButton = document.querySelector(".header__menu-btn");
@@ -52,6 +55,5 @@
     });
   }
 
-  initializeHeaderPastSubHero();
   initializeMobileMenu();
 })();
