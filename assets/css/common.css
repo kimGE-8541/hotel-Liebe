@@ -13,7 +13,7 @@
   /* Colors */
   --color-primary: #7C594C;
   --color-secondary: #F5F1EC;
-  --color-accent: #7A8A74;
+  --color-accent: #E6DED3;
   --color-text: #2B2B2B;
   --color-white: #FFFFFF;
 
@@ -115,6 +115,7 @@
 .p-45 { padding: calc(var(--space) * 3); }
 
 /* Flex Grid Gap */
+<<<<<<< HEAD
 .gap-20 { gap: var(--gutter); }
 
 /* Header: KV(또는 서브 히어로) 세로 중앙이 뷰포트 상단을 지난 뒤 — 메인·서브 공통 */
@@ -748,3 +749,6 @@
     gap: var(--space);
   }
 }
+=======
+.gap-20 { gap: var(--gutter); }
+>>>>>>> parent of 75d9eae (sustainability 구현 완료)

@@ -49,11 +49,14 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .header__logo a {
   color: inherit;
   text-decoration: none;
 }
 
+=======
+>>>>>>> parent of 75d9eae (sustainability 구현 완료)
 .header__actions {
   display: inline-flex;
   align-items: center;
