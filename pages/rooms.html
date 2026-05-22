@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="../assets/css/reset.css">
     <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/rooms.css">
 </head>
 
@@ -74,23 +75,267 @@
             </div>
         </section>
 
-        <section class="sub-about section_padding" aria-label="Rooms About">
-            <div class="container sub-about__container">
-                <div class="sub-about__text">
-                    <h2 class="title-h2 gsap-reveal">Your Private Stay</h2>
-                    <p class="txt-light-p25 fc-primary mt-30 gsap-reveal">
-                        Standard, Deluxe, Suite까지<br>
-                        머무는 방식에 맞춰 섬세하게 구성된 공간을 제공합니다.
-                    </p>
+        <section class="rooms-intro section_padding" aria-label="객실 소개">
+            <div class="rooms-intro__tabs-wrap gsap-reveal">
+                <div class="rooms-intro__tabs" role="tablist" aria-label="객실 타입 선택">
+                    <button type="button" class="rooms-intro__tab fc-primary title-h3 is-active" role="tab" id="rooms-tab-standard" aria-selected="true" aria-controls="rooms-panel-standard" data-rooms-tab="standard">Standard</button>
+                    <button type="button" class="rooms-intro__tab fc-primary title-h3" role="tab" id="rooms-tab-deluxe" aria-selected="false" aria-controls="rooms-panel-deluxe" data-rooms-tab="deluxe">Deluxe</button>
+                    <button type="button" class="rooms-intro__tab fc-primary title-h3" role="tab" id="rooms-tab-suite" aria-selected="false" aria-controls="rooms-panel-suite" data-rooms-tab="suite">Suite</button>
+
                 </div>
-                <div class="sub-about__media gsap-reveal">
-                    <img src="../assets/images/suite.png" alt="호텔 리에베 객실 이미지">
+            </div>
+
+            <div class="rooms-intro__panels" aria-live="polite">
+                <article class="rooms-intro__panel is-active" id="rooms-panel-standard" role="tabpanel" aria-labelledby="rooms-tab-standard" data-rooms-panel="standard" aria-hidden="false">
+                    <div class="rooms-intro__layout">
+                        <div class="rooms-intro__media gsap-reveal">
+                            <div class="swiper rooms-intro__swiper rooms-intro__swiper--standard" aria-label="Standard 객실 이미지">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide rooms-intro__slide">
+                                        <img src="../assets/images/rooms-standard-01.png" alt="Standard 객실 1" loading="lazy">
+                                    </div>
+                                    <div class="swiper-slide rooms-intro__slide">
+                                        <img src="../assets/images/rooms-standard-02.png" alt="Standard 객실 2" loading="lazy">
+                                    </div>
+                                    <div class="swiper-slide rooms-intro__slide">
+                                        <img src="../assets/images/rooms-standard-03.png" alt="Standard 객실 3" loading="lazy">
+                                    </div>
+                                    <div class="swiper-slide rooms-intro__slide">
+                                        <img src="../assets/images/rooms-standard-04.png" alt="Standard 객실 4" loading="lazy">
+                                    </div>
+                                </div>
+                                <button type="button" class="rooms-intro__nav rooms-intro__nav--prev" aria-label="이전 이미지">
+                                    <span class="rooms-intro__nav-icon" aria-hidden="true">&lt;</span>
+                                </button>
+                                <button type="button" class="rooms-intro__nav rooms-intro__nav--next" aria-label="다음 이미지">
+                                    <span class="rooms-intro__nav-icon" aria-hidden="true">&gt;</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rooms-intro__content gsap-reveal">
+                            <h2 class="title-h2 rooms-intro__title">Standard</h2>
+                            <p class="txt-light-p20 fc-primary rooms-intro__desc">일상의 편안함을 담아낸 기본 공간입니다. <br>따뜻한 톤의 인테리어와 안정적인 휴식을 제공합니다.</p>
+                            <hr class="rooms-intro__rule">
+                            <div class="rooms-intro__specs">
+                                <p class="rooms-intro__spec"><span class="txt-bold-p20">객실 크기 :</span> <span class="txt-light-p20">38㎡</span></p>
+                                <p class="rooms-intro__spec"><span class="txt-bold-p20">전망 :</span> <span class="txt-light-p20">시티뷰 / 일부 객실 파노라마 뷰</span></p>
+                                <p class="rooms-intro__spec"><span class="txt-bold-p20">침대 타입 :</span> <span class="txt-light-p20">킹 베드 1 / 트윈 선택 가능</span></p>
+                                <p class="rooms-intro__spec"><span class="txt-bold-p20">기준 인원 :</span> <span class="txt-light-p20">성인 2인 (최대 3인)</span></p>
+                            </div>
+                            <p class="txt-light-p25 rooms-intro__price">280,000 KRW~</p>
+                            <a class="txt-light-p25 rooms-intro__reserve-btn" href="./reservation.html">Reservation →</a>
+                        </div>
+                    </div>
+                    <div class="rooms-intro__info gsap-reveal">
+                        <div class="rooms-intro__info-col">
+                            <h3 class="title-h3 fc-primary rooms-intro__info-title">Notice</h3>
+                            <ul class="rooms-intro__info-list">
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">체크인 / 체크아웃 :</span> <span class="txt-light-p20">15:00 / 11:00</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">이용 규정 :</span> <span class="txt-light-p20">전 객실 금연</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">서비스 안내 :</span> <span class="txt-light-p20">24시간 룸서비스 및 컨시어지</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">안전 안내 :</span> <span class="txt-light-p20">전용 층 보안 시스템</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">유의 사항 :</span> <span class="txt-light-p20">사전 요청 시 추가 서비스 제공 가능</span></li>
+                            </ul>
+                        </div>
+                        <div class="rooms-intro__info-col">
+                            <h3 class="title-h3 fc-primary rooms-intro__info-title">Amenity</h3>
+                            <ul class="rooms-intro__info-list">
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">욕실 용품 :</span> <span class="txt-light-p20">럭셔리 어메니티, 욕조 및 레인 샤워</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">침구 구성 :</span> <span class="txt-light-p20">최고급 구스다운 침구</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">미니바 :</span> <span class="txt-light-p20">프리미엄 미니바 (일부 무료 제공)</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">커피 & 티 :</span> <span class="txt-light-p20">프리미엄 커피 머신, 티 셀렉션</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">객실 기기 :</span> <span class="txt-light-p20">65인치 스마트 TV, 사운드 시스템</span></li>
+                            </ul>
+                        </div>
+                        <div class="rooms-intro__info-col">
+                            <h3 class="title-h3 fc-primary rooms-intro__info-title">Services</h3>
+                            <ul class="rooms-intro__info-list">
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">기본 제공 :</span> <span class="txt-light-p20">생수 및 커피/티 세트</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">이용 혜택 :</span> <span class="txt-light-p20">피트니스 무료 이용</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">전용 서비스 :</span> <span class="txt-light-p20">무료 와이파이</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">취소 규정 :</span> <span class="txt-light-p20">입실일 전일 18시 이전 무료 취소</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">문의 :</span> <span class="txt-light-p20">프론트 24시간</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+                <article class="rooms-intro__panel" id="rooms-panel-deluxe" role="tabpanel" aria-labelledby="rooms-tab-deluxe" data-rooms-panel="deluxe" aria-hidden="true">
+                    <div class="rooms-intro__layout">
+                        <div class="rooms-intro__media gsap-reveal">
+                            <div class="swiper rooms-intro__swiper rooms-intro__swiper--deluxe" aria-label="Deluxe 객실 이미지">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide rooms-intro__slide">
+                                        <img src="../assets/images/rooms-deluxe-01.png" alt="Deluxe 객실 1" loading="lazy">
+                                    </div>
+                                    <div class="swiper-slide rooms-intro__slide">
+                                        <img src="../assets/images/rooms-deluxe-02.png" alt="Deluxe 객실 2" loading="lazy">
+                                    </div>
+                                    <div class="swiper-slide rooms-intro__slide">
+                                        <img src="../assets/images/rooms-deluxe-03.png" alt="Deluxe 객실 3" loading="lazy">
+                                    </div>
+                                    <div class="swiper-slide rooms-intro__slide">
+                                        <img src="../assets/images/rooms-deluxe-04.png" alt="Deluxe 객실 4" loading="lazy">
+                                    </div>
+                                </div>
+                                <button type="button" class="rooms-intro__nav rooms-intro__nav--prev" aria-label="이전 이미지">
+                                    <span class="rooms-intro__nav-icon" aria-hidden="true">&lt;</span>
+                                </button>
+                                <button type="button" class="rooms-intro__nav rooms-intro__nav--next" aria-label="다음 이미지">
+                                    <span class="rooms-intro__nav-icon" aria-hidden="true">&gt;</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rooms-intro__content gsap-reveal">
+                            <h2 class="title-h2 rooms-intro__title">Deluxe</h2>
+                            <p class="txt-light-p20 fc-primary rooms-intro__desc">여유로운 공간과 세련된 디자인이 어우러진 객실입니다. 도심의 풍경을 바라보며 한층 깊은 휴식을 경험할 수 있습니다.</p>
+                            <hr class="rooms-intro__rule">
+                            <div class="rooms-intro__specs">
+                                <p class="rooms-intro__spec"><span class="txt-bold-p20">객실 크기 :</span> <span class="txt-light-p20">52㎡</span></p>
+                                <p class="rooms-intro__spec"><span class="txt-bold-p20">전망 :</span> <span class="txt-light-p20">파노라마 시티뷰</span></p>
+                                <p class="rooms-intro__spec"><span class="txt-bold-p20">침대 타입 :</span> <span class="txt-light-p20">킹 베드 1 / 트윈 선택 가능</span></p>
+                                <p class="rooms-intro__spec"><span class="txt-bold-p20">기준 인원 :</span> <span class="txt-light-p20">성인 2인 (최대 3인)</span></p>
+                            </div>
+                            <p class="txt-light-p25 rooms-intro__price">440,000 KRW~</p>
+                            <a class="txt-light-p25 rooms-intro__reserve-btn" href="./reservation.html">Reservation →</a>
+                        </div>
+                    </div>
+                    <div class="rooms-intro__info gsap-reveal">
+                        <div class="rooms-intro__info-col">
+                            <h3 class="title-h3 fc-primary rooms-intro__info-title">Notice</h3>
+                            <ul class="rooms-intro__info-list">
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">체크인 / 체크아웃 :</span> <span class="txt-light-p20">15:00 / 12:00</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">이용 규정 :</span> <span class="txt-light-p20">전 객실 금연</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">서비스 안내 :</span> <span class="txt-light-p20">24시간 룸서비스 및 버틀러 연계</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">안전 안내 :</span> <span class="txt-light-p20">전용 층 보안 시스템</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">유의 사항 :</span> <span class="txt-light-p20">파노라마 뷰 객실 사전 배정 가능</span></li>
+                            </ul>
+                        </div>
+                        <div class="rooms-intro__info-col">
+                            <h3 class="title-h3 fc-primary rooms-intro__info-title">Amenity</h3>
+                            <ul class="rooms-intro__info-list">
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">욕실 용품 :</span> <span class="txt-light-p20">시그니처 어메니티, 프리스탠딩 욕조</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">침구 구성 :</span> <span class="txt-light-p20">프리미엄 구스다운 침구</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">미니바 :</span> <span class="txt-light-p20">프리미엄 미니바 (웰컴 드링크 무료)</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">커피 &amp; 티 :</span> <span class="txt-light-p20">캡슐 커피 머신, 프리미엄 티 셀렉션</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">객실 기기 :</span> <span class="txt-light-p20">65인치 스마트 TV, 블루투스 사운드바</span></li>
+                            </ul>
+                        </div>
+                        <div class="rooms-intro__info-col">
+                            <h3 class="title-h3 fc-primary rooms-intro__info-title">Services</h3>
+                            <ul class="rooms-intro__info-list">
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">기본 제공 :</span> <span class="txt-light-p20">생수, 커피/티 및 웰컴 어메니티</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">이용 혜택 :</span> <span class="txt-light-p20">피트니스·사우나 무료 이용</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">전용 서비스 :</span> <span class="txt-light-p20">프리미엄 와이파이</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">취소 규정 :</span> <span class="txt-light-p20">입실일 2일 전 18시 이전 무료 취소</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">문의 :</span> <span class="txt-light-p20">전담 컨시어지 24시간</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+                <article class="rooms-intro__panel" id="rooms-panel-suite" role="tabpanel" aria-labelledby="rooms-tab-suite" data-rooms-panel="suite" aria-hidden="true">
+                    <div class="rooms-intro__layout">
+                        <div class="rooms-intro__media gsap-reveal">
+                            <div class="swiper rooms-intro__swiper rooms-intro__swiper--suite" aria-label="Suite 객실 이미지">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide rooms-intro__slide">
+                                        <img src="../assets/images/rooms-suite-01.png" alt="Suite 객실 1" loading="lazy">
+                                    </div>
+                                    <div class="swiper-slide rooms-intro__slide">
+                                        <img src="../assets/images/rooms-suite-02.png" alt="Suite 객실 2" loading="lazy">
+                                    </div>
+                                    <div class="swiper-slide rooms-intro__slide">
+                                        <img src="../assets/images/rooms-suite-03.png" alt="Suite 객실 3" loading="lazy">
+                                    </div>
+                                    <div class="swiper-slide rooms-intro__slide">
+                                        <img src="../assets/images/rooms-suite-04.png" alt="Suite 객실 4" loading="lazy">
+                                    </div>
+                                </div>
+                                <button type="button" class="rooms-intro__nav rooms-intro__nav--prev" aria-label="이전 이미지">
+                                    <span class="rooms-intro__nav-icon" aria-hidden="true">&lt;</span>
+                                </button>
+                                <button type="button" class="rooms-intro__nav rooms-intro__nav--next" aria-label="다음 이미지">
+                                    <span class="rooms-intro__nav-icon" aria-hidden="true">&gt;</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rooms-intro__content gsap-reveal">
+                            <h2 class="title-h2 rooms-intro__title">Suite</h2>
+                            <p class="txt-light-p20 fc-primary rooms-intro__desc">프라이빗한 공간에서 완성되는 최상의 휴식입니다. 넓은 공간과 섬세한 디테일로 특별한 순간을 만들어드립니다.</p>
+                            <hr class="rooms-intro__rule">
+                            <div class="rooms-intro__specs">
+                                <p class="rooms-intro__spec"><span class="txt-bold-p20">객실 크기 :</span> <span class="txt-light-p20">78㎡</span></p>
+                                <p class="rooms-intro__spec"><span class="txt-bold-p20">전망 :</span> <span class="txt-light-p20">파노라마 뷰 / 전용 라운지</span></p>
+                                <p class="rooms-intro__spec"><span class="txt-bold-p20">침대 타입 :</span> <span class="txt-light-p20">킹 베드 1 / 트윈 선택 가능 + 거실</span></p>
+                                <p class="rooms-intro__spec"><span class="txt-bold-p20">기준 인원 :</span> <span class="txt-light-p20">성인 2인 (최대 4인)</span></p>
+                            </div>
+                            <p class="txt-light-p25 rooms-intro__price">680,000 KRW~</p>
+                            <a class="txt-light-p25 rooms-intro__reserve-btn" href="./reservation.html">Reservation →</a>
+                        </div>
+                    </div>
+                    <div class="rooms-intro__info gsap-reveal">
+                        <div class="rooms-intro__info-col">
+                            <h3 class="title-h3 fc-primary rooms-intro__info-title">Notice</h3>
+                            <ul class="rooms-intro__info-list">
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">체크인 / 체크아웃 :</span> <span class="txt-light-p20">14:00 / 13:00</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">이용 규정 :</span> <span class="txt-light-p20">전 객실 금연</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">서비스 안내 :</span> <span class="txt-light-p20">24시간 풀 룸서비스 및 전담 컨시어지</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">안전 안내 :</span> <span class="txt-light-p20">프라이빗 플로어 보안 시스템</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">유의 사항 :</span> <span class="txt-light-p20">전용 라운지 이용 포함</span></li>
+                            </ul>
+                        </div>
+                        <div class="rooms-intro__info-col">
+                            <h3 class="title-h3 fc-primary rooms-intro__info-title">Amenity</h3>
+                            <ul class="rooms-intro__info-list">
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">욕실 용품 :</span> <span class="txt-light-p20">시프트 어메니티, 스팀 사우나</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">침구 구성 :</span> <span class="txt-light-p20">시그니처 구스다운 침구 세트</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">미니바 :</span> <span class="txt-light-p20">시그니처 미니바 (프리미엄 음료 무료)</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">커피 &amp; 티 :</span> <span class="txt-light-p20">에스프레소 머신, 시그니처 티 컬렉션</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">객실 기기 :</span> <span class="txt-light-p20">75인치 스마트 TV, 홈 시어터 시스템</span></li>
+                            </ul>
+                        </div>
+                        <div class="rooms-intro__info-col">
+                            <h3 class="title-h3 fc-primary rooms-intro__info-title">Services</h3>
+                            <ul class="rooms-intro__info-list">
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">기본 제공 :</span> <span class="txt-light-p20">웰컴 샴페인 및 미니 다이닝 세트</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">이용 혜택 :</span> <span class="txt-light-p20">전용 라운지·피트니스·스파 우선 이용</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">전용 서비스 :</span> <span class="txt-light-p20">전용 고속 와이파이 및 스마트룸 컨트롤</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">취소 규정 :</span> <span class="txt-light-p20">입실일 3일 전 18시 이전 무료 취소</span></li>
+                                <li class="rooms-intro__info-item"><span class="txt-bold-p20">문의 :</span> <span class="txt-light-p20">전담 버틀러 24시간</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="rooms-more section_padding bg-secondary" aria-label="More Experience">
+            <div class="container rooms-more__container">
+                <h2 class="title-h3 fc-primary rooms-more__title gsap-reveal">More Experience</h2>
+                <div class="rooms-more__grid">
+                    <a class="rooms-more__card gsap-reveal" href="./facilities.html">
+                        <div class="rooms-more__media">
+                            <img src="../assets/images/rooms-fitness.png" alt="Fitness" loading="lazy">
+                        </div>
+                        <span class="rooms-more__label title-h3">Fitness</span>
+                    </a>
+                    <a class="rooms-more__card gsap-reveal" href="./dining.html">
+                        <div class="rooms-more__media">
+                            <img src="../assets/images/rooms-dining.png" alt="Dining" loading="lazy">
+                        </div>
+                        <span class="rooms-more__label title-h3">Dining</span>
+                    </a>
+                    <a class="rooms-more__card gsap-reveal" href="./facilities.html">
+                        <div class="rooms-more__media">
+                            <img src="../assets/images/rooms-rooftop.png" alt="Rooftop" loading="lazy">
+                        </div>
+                        <span class="rooms-more__label title-h3">Rooftop</span>
+                    </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer" aria-label="사이트 푸터">
+<footer class="footer" aria-label="사이트 푸터">
         <div class="container footer__container">
             <div class="footer__upper">
                 <div class="footer__brand-group">
@@ -129,11 +374,12 @@
             </div>
         </div>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="../assets/js/common.js"></script>
     <script src="../assets/js/sustainability.js"></script>
+    <script src="../assets/js/rooms.js"></script>
 </body>
 
 </html>

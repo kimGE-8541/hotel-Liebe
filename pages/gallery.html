@@ -74,17 +74,91 @@
             </div>
         </section>
 
-        <section class="sub-about section_padding" aria-label="Gallery About">
-            <div class="container sub-about__container">
-                <div class="sub-about__text">
-                    <h2 class="title-h2 gsap-reveal">Scene Collection</h2>
-                    <p class="txt-light-p25 fc-primary mt-30 gsap-reveal">
-                        객실과 다이닝, 부대시설까지<br>
-                        리에베의 무드를 사진으로 경험해보세요.
-                    </p>
+        <section class="gallery-main section_padding" aria-label="갤러리">
+            <div class="container gallery__container">
+                <div class="gallery__filter-row">
+                    <div class="gallery__filter gsap-reveal">
+                        <button type="button" class="gallery__filter-trigger" id="gallery-filter-trigger" aria-expanded="false" aria-haspopup="listbox" aria-controls="gallery-filter-list">
+                            <span class="gallery__filter-label txt-light-p25">Filter</span>
+                            <span class="material-symbols-outlined gallery__filter-icon" aria-hidden="true">filter_list</span>
+                        </button>
+                        <ul class="gallery__dropdown" id="gallery-filter-list" role="listbox" aria-labelledby="gallery-filter-trigger" hidden>
+                            <li role="none"><button type="button" class="gallery__dropdown-item txt-light-p25" role="option" data-gallery-filter="">Filter</button></li>
+                            <li role="none"><button type="button" class="gallery__dropdown-item txt-light-p25" role="option" data-gallery-filter="Hotel">Hotel</button></li>
+                            <li role="none"><button type="button" class="gallery__dropdown-item txt-light-p25" role="option" data-gallery-filter="Lobby">Lobby</button></li>
+                            <li role="none"><button type="button" class="gallery__dropdown-item txt-light-p25" role="option" data-gallery-filter="Rooms">Rooms</button></li>
+                            <li role="none"><button type="button" class="gallery__dropdown-item txt-light-p25" role="option" data-gallery-filter="Dining">Dining</button></li>
+                            <li role="none"><button type="button" class="gallery__dropdown-item txt-light-p25" role="option" data-gallery-filter="Facilities">Facilities</button></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="sub-about__media gsap-reveal">
-                    <img src="../assets/images/scene-3.jpg" alt="호텔 리에베 갤러리 이미지">
+
+                <div class="gallery__grid" id="gallery-grid">
+                    <figure class="gallery__tile gsap-reveal" data-gallery-file="img-hotel-01.png" data-gallery-category="Hotel">
+                        <button type="button" class="gallery__tile-btn" aria-label="img-hotel-01.png 보기">
+                            <img src="../assets/images/gallery/img-hotel-01.png" alt="" loading="lazy">
+                        </button>
+                    </figure>
+                    <figure class="gallery__tile gsap-reveal" data-gallery-file="img-robby-01.png" data-gallery-category="Lobby">
+                        <button type="button" class="gallery__tile-btn" aria-label="img-robby-01.png 보기">
+                            <img src="../assets/images/gallery/img-robby-01.png" alt="" loading="lazy">
+                        </button>
+                    </figure>
+                    <figure class="gallery__tile gsap-reveal" data-gallery-file="img-robby-02.png" data-gallery-category="Lobby">
+                        <button type="button" class="gallery__tile-btn" aria-label="img-robby-02.png 보기">
+                            <img src="../assets/images/gallery/img-robby-02.png" alt="" loading="lazy">
+                        </button>
+                    </figure>
+                    <figure class="gallery__tile gsap-reveal" data-gallery-file="img-robby-03.png" data-gallery-category="Lobby">
+                        <button type="button" class="gallery__tile-btn" aria-label="img-robby-03.png 보기">
+                            <img src="../assets/images/gallery/img-robby-03.png" alt="" loading="lazy">
+                        </button>
+                    </figure>
+                    <figure class="gallery__tile gsap-reveal" data-gallery-file="img-rooms-01.png" data-gallery-category="Rooms">
+                        <button type="button" class="gallery__tile-btn" aria-label="img-rooms-01.png 보기">
+                            <img src="../assets/images/gallery/img-rooms-01.png" alt="" loading="lazy">
+                        </button>
+                    </figure>
+                    <figure class="gallery__tile gsap-reveal" data-gallery-file="img-rooms-02.png" data-gallery-category="Rooms">
+                        <button type="button" class="gallery__tile-btn" aria-label="img-rooms-02.png 보기">
+                            <img src="../assets/images/gallery/img-rooms-02.png" alt="" loading="lazy">
+                        </button>
+                    </figure>
+                    <figure class="gallery__tile gsap-reveal" data-gallery-file="img-rooms-03.png" data-gallery-category="Rooms">
+                        <button type="button" class="gallery__tile-btn" aria-label="img-rooms-03.png 보기">
+                            <img src="../assets/images/gallery/img-rooms-03.png" alt="" loading="lazy">
+                        </button>
+                    </figure>
+                    <figure class="gallery__tile gsap-reveal" data-gallery-file="img-rooms-04.png" data-gallery-category="Rooms">
+                        <button type="button" class="gallery__tile-btn" aria-label="img-rooms-04.png 보기">
+                            <img src="../assets/images/gallery/img-rooms-04.png" alt="" loading="lazy">
+                        </button>
+                    </figure>
+                    <figure class="gallery__tile gsap-reveal" data-gallery-file="img-dining-01.png" data-gallery-category="Dining">
+                        <button type="button" class="gallery__tile-btn" aria-label="img-dining-01.png 보기">
+                            <img src="../assets/images/gallery/img-dining-01.png" alt="" loading="lazy">
+                        </button>
+                    </figure>
+                    <figure class="gallery__tile gsap-reveal" data-gallery-file="img-dining-02.png" data-gallery-category="Dining">
+                        <button type="button" class="gallery__tile-btn" aria-label="img-dining-02.png 보기">
+                            <img src="../assets/images/gallery/img-dining-02.png" alt="" loading="lazy">
+                        </button>
+                    </figure>
+                    <figure class="gallery__tile gsap-reveal" data-gallery-file="img-dining-03.png" data-gallery-category="Dining">
+                        <button type="button" class="gallery__tile-btn" aria-label="img-dining-03.png 보기">
+                            <img src="../assets/images/gallery/img-dining-03.png" alt="" loading="lazy">
+                        </button>
+                    </figure>
+                    <figure class="gallery__tile gsap-reveal" data-gallery-file="img-facilities-01.png" data-gallery-category="Facilities">
+                        <button type="button" class="gallery__tile-btn" aria-label="img-facilities-01.png 보기">
+                            <img src="../assets/images/gallery/img-facilities-01.png" alt="" loading="lazy">
+                        </button>
+                    </figure>
+                    <figure class="gallery__tile gsap-reveal" data-gallery-file="img-facilities-02.png" data-gallery-category="Facilities">
+                        <button type="button" class="gallery__tile-btn" aria-label="img-facilities-02.png 보기">
+                            <img src="../assets/images/gallery/img-facilities-02.png" alt="" loading="lazy">
+                        </button>
+                    </figure>
                 </div>
             </div>
         </section>
@@ -130,10 +204,24 @@
         </div>
     </footer>
 
+    <div class="gallery-modal" id="gallery-modal" hidden aria-hidden="true">
+        <div class="gallery-modal__backdrop" data-gallery-modal-close></div>
+        <div class="gallery-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="gallery-modal-title">
+            <h2 id="gallery-modal-title" class="visually-hidden">갤러리 이미지</h2>
+            <button type="button" class="gallery-modal__close" aria-label="닫기" data-gallery-modal-close>
+                <span class="material-symbols-outlined" aria-hidden="true">close</span>
+            </button>
+            <div class="gallery-modal__media">
+                <img class="gallery-modal__image" id="gallery-modal-image" src="" alt="">
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="../assets/js/common.js"></script>
     <script src="../assets/js/sustainability.js"></script>
+    <script src="../assets/js/gallery.js"></script>
 </body>
 
 </html>

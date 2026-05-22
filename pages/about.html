@@ -94,6 +94,92 @@
                 </div>
             </div>
         </section>
+
+        <section class="values section_padding" aria-labelledby="values-heading">
+            <div class="container values__container">
+                <div class="values__head gsap-reveal">
+                    <h2 id="values-heading" class="title-h2">What We Value</h2>
+                </div>
+                <div class="values__shell">
+
+
+                    <div class="values__body">
+                        <div class="values__rail" aria-hidden="true">
+                            <div class="values__line"></div>
+                        </div>
+                        <div class="values__grid-inner">
+                            <div class="values__grid">
+                                <article class="values__item">
+                                    <h3 class="title-h3 values__item-title">Refined Simplicity</h3>
+                                    <p class="txt-light-p20 values__item-text">
+                                        불필요한 요소를 덜어내고, 꼭 필요한 것만 남긴 정제된 공간과 디자인을 지향합니다. 단순함 속에서도 완성도 높은 디테일을 통해 편안함과 균형을
+                                        동시에 제공합니다.
+                                    </p>
+                                </article>
+                                <article class="values__item">
+                                    <h3 class="title-h3 values__item-title">Quiet Comfort</h3>
+                                    <p class="txt-light-p20 values__item-text">
+                                        눈에 띄지 않지만 자연스럽게 느껴지는 편안함을 추구합니다. 과하지 않은 분위기 속에서 머무는 시간은 보다 깊고 안정적인 휴식으로 이어집니다.
+                                    </p>
+                                </article>
+                                <article class="values__item">
+                                    <h3 class="title-h3 values__item-title">Thoughtful Service</h3>
+                                    <p class="txt-light-p20 values__item-text">
+                                        보이지 않는 부분까지 세심하게 고려한 서비스를 제공합니다. 고객의 흐름과 경험을 이해하고, 불편함 없이 자연스럽게 이어지는 서비스를 지향합니다.
+                                    </p>
+                                </article>
+                                <article class="values__item">
+                                    <h3 class="title-h3 values__item-title">Responsible Approach</h3>
+                                    <p class="txt-light-p20 values__item-text">
+                                        환경과 사회를 고려한 운영을 통해 지속 가능성을 고민합니다. 작은 선택 하나까지 책임감 있게 이어지도록 균형 있는 기준을 유지하고 있습니다.
+                                    </p>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="store-location" aria-label="매장 위치">
+            <div class="store-location__map" id="map" aria-hidden="true"></div>
+            <div class="container store-location__inner">
+                <div class="store-location__stack">
+                    <aside class="store-location__nav">
+                        <p class="logo store-location__logo"><a href="../index.html">Liebe</a></p>
+                        <hr class="store-location__rule">
+                        <p class="txt-light-p20 fc-primary store-location__label">호텔 주소</p>
+                        <p class="txt-light-p25 store-location__address">
+                            서울특별시 ○○구 ○○로 00,
+                            호텔 리에베
+                        </p>
+                        <p class="txt-light-p20 fc-primary store-location__label store-location__label--phone">대표번호</p>
+                        <p class="txt-light-p25 store-location__phone">02-1234-5678</p>
+                        <a class="txt-light-p20 store-location__share-btn" href="#" target="_blank"
+                            rel="noopener noreferrer">위치공유하기</a>
+                    </aside>
+                    <div class="store-location__toolbar" role="group" aria-label="지도 보기">
+                        <div class="store-location__zoom-group">
+                            <button type="button"
+                                class="store-location__toolbar-btn store-location__toolbar-btn--zoom-in"
+                                aria-label="확대">
+                                <span class="material-symbols-outlined" aria-hidden="true">add</span>
+                            </button>
+                            <button type="button"
+                                class="store-location__toolbar-btn store-location__toolbar-btn--zoom-out"
+                                aria-label="축소">
+                                <span class="material-symbols-outlined" aria-hidden="true">remove</span>
+                            </button>
+                        </div>
+                        <button type="button"
+                            class="store-location__toolbar-btn store-location__toolbar-btn--fullscreen"
+                            aria-label="전체 화면">
+                            <span class="material-symbols-outlined" aria-hidden="true">fullscreen</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="footer" aria-label="사이트 푸터">
@@ -140,6 +226,38 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="../assets/js/common.js"></script>
     <script src="../assets/js/sustainability.js"></script>
+    <script src="../assets/js/about.js"></script>
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=48a962b973e72c205bf5fa4fe83957bb"></script>
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=APIKEY&libraries=services,clusterer,drawing"></script>
+    <script>
+        var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+        var options = { //지도를 생성할 때 필요한 기본 옵션
+            center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
+            level: 3 //지도의 레벨(확대, 축소 정도)
+        };
+
+        var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+            mapOption = {
+                center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                level: 3 // 지도의 확대 레벨
+            };
+
+        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+        // 마커가 표시될 위치입니다 
+        var markerPosition = new kakao.maps.LatLng(33.450701, 126.570667);
+
+        // 마커를 생성합니다
+        var marker = new kakao.maps.Marker({
+            position: markerPosition
+        });
+
+        // 마커가 지도 위에 표시되도록 설정합니다
+        marker.setMap(map);
+    </script>
 </body>
 
 </html>

@@ -188,6 +188,12 @@
     transform: translateY(50px);
     will-change: opacity, transform;
   }
+
+  .gsap-reveal.is-revealed {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
