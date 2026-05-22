@@ -325,6 +325,33 @@
   padding: var(--space) 20px;
   border: 1px solid var(--color-white);
   line-height: 1;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.header__reserve-btn:hover,
+.header__reserve-btn:focus-visible {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border-color: var(--color-white);
+}
+
+.main-header.is-past-kv .header__reserve-btn:hover,
+.main-header.is-past-kv .header__reserve-btn:focus-visible {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border-color: var(--color-white);
+}
+
+.header__mobile-reserve-btn:hover,
+.header__mobile-reserve-btn:focus-visible,
+.main-header.is-past-kv .header__mobile-reserve-btn:hover,
+.main-header.is-past-kv .header__mobile-reserve-btn:focus-visible {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border-color: var(--color-white);
 }
 
 .header__mobile-menu {

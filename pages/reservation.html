@@ -62,8 +62,8 @@
     <main class="sub-main reservation-main">
         <section class="reservation-process section_padding" aria-label="예약 진행 단계">
             <div class="container reservation-process__container">
-                <h2 class="title-h1 reservation-process__title">Reservation</h2>
-                <nav class="reservation-process__steps" aria-label="예약 단계">
+                <h2 class="title-h1 reservation-process__title gsap-reveal">Reservation</h2>
+                <nav class="reservation-process__steps gsap-reveal" aria-label="예약 단계">
                     <ol class="reservation-process__list">
                         <li class="reservation-process__item is-active" aria-current="step">
                             <div class="reservation-process__node">
@@ -99,7 +99,7 @@
 
         <section class="reservation-filter" aria-label="예약 조건 선택">
             <div class="container reservation-filter__container">
-                <div class="reservation-filter__bar">
+                <div class="reservation-filter__bar gsap-reveal">
                     <div class="reservation-filter__field reservation-filter__field--date">
                         <span class="reservation-filter__label txt-light-p20">일정 선택</span>
                         <div class="reservation-filter__dropdown-wrap">
@@ -171,6 +171,76 @@
 
                     <button type="button" class="reservation-filter__submit txt-light-p25">객실 검색</button>
                 </div>
+            </div>
+        </section>
+
+        <section class="reservation-rooms section_padding" aria-label="선택 가능한 객실">
+            <div class="container reservation-rooms__container">
+                <ul class="reservation-rooms__list">
+                    <li class="reservation-room gsap-reveal">
+                        <article class="reservation-room__inner">
+                            <div class="reservation-room__media">
+                                <img src="../assets/images/rooms-standard-01.png" alt="Standard Single 객실" loading="lazy">
+                            </div>
+                            <div class="reservation-room__content">
+                                <div class="reservation-room__intro">
+                                    <h3 class="title-h2 reservation-room__title">Standard Single</h3>
+                                    <p class="txt-light-p25 fc-primary reservation-room__desc">32㎡ · 2인 · 퀸 · 시티뷰</p>
+                                    <a class="txt-light-p20 fc-primary reservation-room__more" href="./rooms.html">자세히 보기 &gt;</a>
+                                </div>
+                                <div class="reservation-room__actions">
+                                    <div class="reservation-room__price-wrap">
+                                        <p class="reservation-room__price">KRW 400,000~</p>
+                                        <p class="txt-light-p20 reservation-room__price-note">1박 숙박요금 포함</p>
+                                    </div>
+                                    <a class="reservation-room__book-btn" href="./reservation-options.html">예약하기</a>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="reservation-room gsap-reveal">
+                        <article class="reservation-room__inner">
+                            <div class="reservation-room__media">
+                                <img src="../assets/images/rooms-deluxe-01.png" alt="Deluxe Double 객실" loading="lazy">
+                            </div>
+                            <div class="reservation-room__content">
+                                <div class="reservation-room__intro">
+                                    <h3 class="title-h2 reservation-room__title">Deluxe Double</h3>
+                                    <p class="txt-light-p25 fc-primary reservation-room__desc">52㎡ · 2인 · 킹 · 파노라마 시티뷰</p>
+                                    <a class="txt-light-p20 fc-primary reservation-room__more" href="./rooms.html">자세히 보기 &gt;</a>
+                                </div>
+                                <div class="reservation-room__actions">
+                                    <div class="reservation-room__price-wrap">
+                                        <p class="reservation-room__price">KRW 440,000~</p>
+                                        <p class="txt-light-p20 reservation-room__price-note">1박 숙박요금 포함</p>
+                                    </div>
+                                    <a class="reservation-room__book-btn" href="./reservation-options.html">예약하기</a>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="reservation-room gsap-reveal">
+                        <article class="reservation-room__inner">
+                            <div class="reservation-room__media">
+                                <img src="../assets/images/rooms-suite-01.png" alt="Executive Suite 객실" loading="lazy">
+                            </div>
+                            <div class="reservation-room__content">
+                                <div class="reservation-room__intro">
+                                    <h3 class="title-h2 reservation-room__title">Executive Suite</h3>
+                                    <p class="txt-light-p25 fc-primary reservation-room__desc">78㎡ · 2인 · 킹 · 파노라마 뷰 · 거실</p>
+                                    <a class="txt-light-p20 fc-primary reservation-room__more" href="./rooms.html">자세히 보기 &gt;</a>
+                                </div>
+                                <div class="reservation-room__actions">
+                                    <div class="reservation-room__price-wrap">
+                                        <p class="reservation-room__price">KRW 680,000~</p>
+                                        <p class="txt-light-p20 reservation-room__price-note">1박 숙박요금 포함</p>
+                                    </div>
+                                    <a class="reservation-room__book-btn" href="./reservation-options.html">예약하기</a>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                </ul>
             </div>
         </section>
     </main>

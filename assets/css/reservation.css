@@ -74,7 +74,7 @@
   border-radius: 50%;
   font-family: "Pretendard", sans-serif;
   font-size: 40px;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1;
 }
 
@@ -108,6 +108,17 @@
   margin-top: 28px;
   background-color: var(--color-text);
   align-self: flex-start;
+}
+
+.reservation-process__step-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.reservation-process__step-link:focus-visible .reservation-process__circle {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
 }
 
 @media (max-width: 1280px) {
@@ -453,5 +464,180 @@
 
   .reservation-calendar {
     width: min(100%, 320px);
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Room list */
+/* -------------------------------------------------------------------------- */
+.reservation-rooms__container {
+  max-width: var(--content-width);
+}
+
+.reservation-rooms__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reservation-room {
+  border-top: 1px solid var(--color-text);
+}
+
+.reservation-room:last-child {
+  border-bottom: 1px solid var(--color-text);
+}
+
+.reservation-room__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: calc(var(--space) * 3);
+  padding-block: 60px;
+  padding-right: 125px;
+  box-sizing: border-box;
+}
+
+.reservation-room__media {
+  flex: 0 0 625px;
+  width: 625px;
+  min-height: 360px;
+  overflow: hidden;
+}
+
+.reservation-room__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reservation-room__content {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.reservation-room__title {
+  margin: 0;
+  color: var(--color-text);
+}
+
+.reservation-room__desc {
+  margin: 5px 0 0;
+}
+
+.reservation-room__more {
+  display: inline-block;
+  margin-top: 5px;
+  opacity: 0.5;
+  text-decoration: none;
+  transition: opacity 0.25s ease;
+}
+
+.reservation-room__more:hover,
+.reservation-room__more:focus-visible {
+  opacity: 1;
+}
+
+.reservation-room__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 45px;
+  margin-top: 100px;
+}
+
+.reservation-room__price-wrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.reservation-room__price {
+  margin: 0;
+  font-family: "Pretendard", sans-serif;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--color-text);
+}
+
+.reservation-room__price-note {
+  margin: calc(var(--space) / 2) 0 0;
+  color: var(--color-text);
+  opacity: 0.5;
+}
+
+.reservation-room__book-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 45px;
+  border: 1px solid var(--color-primary);
+  background-color: transparent;
+  color: var(--color-primary);
+  font-family: "Pretendard", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.5;
+  text-decoration: none;
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
+}
+
+.reservation-room__book-btn:hover,
+.reservation-room__book-btn:focus-visible {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+@media (max-width: 1280px) {
+  .reservation-room__inner {
+    padding-right: calc(var(--space) * 4);
+    gap: calc(var(--space) * 2);
+  }
+
+  .reservation-room__media {
+    flex: 0 0 min(100%, 480px);
+    width: min(100%, 480px);
+    min-height: 320px;
+  }
+
+  .reservation-room__price {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .reservation-room__inner {
+    flex-direction: column;
+    padding-block: calc(var(--space) * 4);
+    padding-right: var(--space);
+    padding-left: var(--space);
+  }
+
+  .reservation-room__media {
+    flex: none;
+    width: 100%;
+    min-height: 240px;
+  }
+
+  .reservation-room__actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: calc(var(--space) * 2);
+    margin-top: calc(var(--space) * 4);
+  }
+
+  .reservation-room__book-btn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .reservation-room__price {
+    font-size: 28px;
   }
 }
