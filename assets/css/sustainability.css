@@ -182,31 +182,25 @@
 }
 
 .sub-main {
-  padding-top: 120px;
+  padding-top: 0;
 }
 
-/* Shared Header */
+/* Shared Header (aligned with assets/css/style.css) */
 .main-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 20;
+  z-index: 10;
   background-color: rgba(0, 0, 0, 0.5);
   padding-top: var(--space);
   padding-bottom: var(--space);
-<<<<<<< HEAD
-<<<<<<< HEAD
   transition:
     transform 0.45s cubic-bezier(0.4, 0, 0.2, 1),
     background-color 0.35s ease,
     box-shadow 0.35s ease,
     padding-top 0.35s ease,
     padding-bottom 0.35s ease;
-=======
->>>>>>> parent of 9bbdb86 (sustainability 구현중)
-=======
->>>>>>> parent of 9bbdb86 (sustainability 구현중)
 }
 
 .header__container {
@@ -217,6 +211,7 @@
 
 .header__top,
 .header__bottom {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -224,12 +219,14 @@
 }
 
 .header__logo {
+  color: var(--color-white);
   width: 1480px;
   text-align: center;
 }
 
 .header__logo a {
-  color: var(--color-white);
+  color: inherit;
+  text-decoration: none;
 }
 
 .header__actions {
@@ -314,50 +311,40 @@
 
 /* Sustainability Page Specific Sections */
 .sub-hero {
-<<<<<<< HEAD
-<<<<<<< HEAD
   --sub-hero-height: 860px;
   --sub-hero-header-clear: 120px;
   height: var(--sub-hero-height);
   min-height: var(--sub-hero-height);
   background-image: var(--sub-hero-image, url(../images/sustainability-kv.png));
-=======
-  min-height: 70vh;
-  background-image: url(../images/sustainability.png);
->>>>>>> parent of 9bbdb86 (sustainability 구현중)
-=======
-  min-height: 70vh;
-  background-image: url(../images/sustainability.png);
->>>>>>> parent of 9bbdb86 (sustainability 구현중)
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .sub-hero__overlay {
-  min-height: 70vh;
-  background-color: rgba(0, 0, 0, 0.35);
+  height: 100%;
+  min-height: var(--sub-hero-height);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .sub-hero__container {
-  min-height: 70vh;
+  height: 100%;
+  min-height: var(--sub-hero-height);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding-bottom: var(--section-space);
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: var(--sub-hero-header-clear);
+  padding-bottom: calc(var(--space) * 2);
+  text-align: left;
 }
 
-.sub-hero__title {
-  margin-top: calc(var(--space) * 2);
-  font-family: "Jeju Myeongjo", serif;
-  font-size: 100px;
-  line-height: 1;
-  font-weight: 400;
-  color: var(--color-white);
+.sub-hero__inner {
+  width: 100%;
+  max-width: 100%;
+  text-align: left;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 .sub-about__container {
   display: flex;
   align-items: center;
@@ -382,6 +369,41 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Sustainability — philosophy (철학, 전체 너비 반반) */
+.sub-philosophy {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  min-height: min(70vh, 720px);
+}
+
+.sub-philosophy__media {
+  min-height: 320px;
+  overflow: hidden;
+}
+
+.sub-philosophy__media img {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+  display: block;
+}
+
+.sub-philosophy__panel {
+  background-color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-left: calc(var(--space) * 2);
+  padding-right: calc((100vw - min(100vw, var(--content-width))) / 2 + 105px);
+}
+
+.sub-philosophy__inner {
+  max-width: min(740px, calc(50vw - var(--space) * 2));
+  text-align: left;
 }
 
 /* Sustainability — practices (실천 방식) */
@@ -418,7 +440,7 @@
 .sub-practices__body {
   display: flex;
   flex-direction: column;
-  gap: var(--space);
+  gap: calc(var(--space) * 2);
   padding: calc(var(--space) * 2) calc(var(--space) * 2) calc(var(--space) * 4);
   min-height: 0;
 }
@@ -436,22 +458,6 @@
   font-size: 28px;
   line-height: 1;
   color: var(--color-primary);
-=======
-.sub-intro {
-  background-color: var(--color-secondary);
-}
-
-.sub-intro__container {
-  text-align: center;
->>>>>>> parent of 9bbdb86 (sustainability 구현중)
-=======
-.sub-intro {
-  background-color: var(--color-secondary);
-}
-
-.sub-intro__container {
-  text-align: center;
->>>>>>> parent of 9bbdb86 (sustainability 구현중)
 }
 
 /* Shared Footer */
@@ -540,12 +546,15 @@
 
 @media (max-width: 1439px) {
   .container {
+    box-sizing: border-box;
     padding-left: calc(var(--space) * 2);
     padding-right: calc(var(--space) * 2);
   }
 
   .header__top,
   .header__bottom {
+    width: 100%;
+    margin-left: 0;
     justify-content: space-between;
   }
 
@@ -554,21 +563,37 @@
     width: auto;
   }
 
+  .header__lang-btn,
+  .header__gnb-list a,
+  .header__reserve-btn,
+  .header__mobile-gnb-list a,
+  .header__mobile-reserve-btn {
+    font-size: 18px;
+  }
+
   .header__gnb-list {
     gap: calc(var(--space) * 2);
   }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
   .sub-hero {
     --sub-hero-header-clear: 110px;
+    height: clamp(520px, 72svh, 860px);
+    min-height: clamp(520px, 72svh, 860px);
+  }
+
+  .sub-hero__overlay,
+  .sub-hero__container {
+    min-height: clamp(520px, 72svh, 860px);
+  }
+
+  .sub-hero .title-h2 {
+    font-size: clamp(48px, 6vw, 65px);
   }
 
   .sub-about__container {
     gap: calc(var(--space) * 3);
   }
 
-<<<<<<< HEAD
   .sub-philosophy__inner {
     max-width: min(640px, calc(45vw));
   }
@@ -674,49 +699,36 @@
   .sub-philosophy__inner {
     max-width: none;
     width: 100%;
-=======
-  .sub-hero__title {
-    font-size: 80px;
->>>>>>> parent of 9bbdb86 (sustainability 구현중)
-=======
-  .sub-hero__title {
-    font-size: 80px;
->>>>>>> parent of 9bbdb86 (sustainability 구현중)
-=======
-  .sub-practices__card {
-    min-height: 480px;
->>>>>>> parent of 75d9eae (sustainability 구현 완료)
   }
 }
 
 @media (max-width: 767px) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   .container {
     padding-left: var(--space);
     padding-right: var(--space);
   }
 
-=======
->>>>>>> parent of 9bbdb86 (sustainability 구현중)
-=======
->>>>>>> parent of 9bbdb86 (sustainability 구현중)
-=======
-  .main-header.is-past-kv {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-  }
-
->>>>>>> parent of 75d9eae (sustainability 구현 완료)
   .sub-main {
-    padding-top: 105px;
+    padding-top: 0;
   }
 
   .section_padding {
     padding-top: calc(var(--section-space) - calc(var(--space) * 4));
     padding-bottom: calc(var(--section-space) - calc(var(--space) * 4));
+  }
+
+  .header__lang-btn,
+  .header__gnb-list a,
+  .header__reserve-btn {
+    font-size: 16px;
+  }
+
+  .header__logo {
+    font-size: 38px;
+  }
+
+  .header__reserve-btn {
+    padding: 10px 12px;
   }
 
   .header__bottom {
@@ -729,11 +741,6 @@
 
   .header__lang-btn {
     margin-left: 0;
-    font-size: 16px;
-  }
-
-  .header__logo {
-    font-size: 38px;
   }
 
   .header__menu-btn {
@@ -758,30 +765,36 @@
 
   .header__mobile-gnb-list a,
   .header__mobile-reserve-btn {
+    font-family: "Jeju Myeongjo", serif;
+    font-weight: 400;
     font-size: 18px;
+    color: var(--color-white);
   }
 
   .header__mobile-reserve-btn {
     margin-top: var(--space);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space);
     padding: 10px 12px;
+    border: 1px solid var(--color-white);
+    line-height: 1;
   }
 
-  .sub-hero,
+  .sub-hero {
+    --sub-hero-height: min(860px, calc(100svh - var(--space)));
+    --sub-hero-header-clear: 96px;
+  }
+
   .sub-hero__overlay,
   .sub-hero__container {
-    min-height: 62vh;
-  }
-
-  .sub-hero__title {
-    font-size: 48px;
+    min-height: var(--sub-hero-height);
   }
 
   .title-h2 {
     font-size: 34px;
   }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
   .sub-about__container {
     flex-direction: column;
     align-items: stretch;
@@ -801,6 +814,28 @@
     aspect-ratio: 730 / 461;
   }
 
+  .sub-philosophy {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .sub-philosophy__media {
+    min-height: 220px;
+    order: 1;
+  }
+
+  .sub-philosophy__panel {
+    order: 2;
+    justify-content: flex-start;
+    align-items: center;
+    padding: calc(var(--space) * 4) var(--space);
+  }
+
+  .sub-philosophy__inner {
+    max-width: none;
+    width: 100%;
+  }
+
   .sub-practices__grid {
     grid-template-columns: 1fr;
   }
@@ -814,13 +849,14 @@
     font-size: 22px;
   }
 
-=======
->>>>>>> parent of 9bbdb86 (sustainability 구현중)
-=======
->>>>>>> parent of 9bbdb86 (sustainability 구현중)
   .txt-light-p20,
   .txt-bold-p20 {
     font-size: 16px;
+  }
+
+  .txt-light-p25,
+  .txt-bold-p25 {
+    font-size: 20px;
   }
 
   .footer__upper {

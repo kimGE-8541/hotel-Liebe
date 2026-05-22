@@ -13,7 +13,7 @@
   /* Colors */
   --color-primary: #7C594C;
   --color-secondary: #F5F1EC;
-  --color-accent: #E6DED3;
+  --color-accent: #7A8A74;
   --color-text: #2B2B2B;
   --color-white: #FFFFFF;
 
@@ -115,7 +115,6 @@
 .p-45 { padding: calc(var(--space) * 3); }
 
 /* Flex Grid Gap */
-<<<<<<< HEAD
 .gap-20 { gap: var(--gutter); }
 
 /* Header: KV(또는 서브 히어로) 세로 중앙이 뷰포트 상단을 지난 뒤 — 메인·서브 공통 */
@@ -528,13 +527,18 @@
 }
 
 @media (max-width: 1280px) {
+  .main-header {
+    padding-top: calc(var(--space) * 1.25);
+    padding-bottom: calc(var(--space) * 1.1);
+  }
+
   .section_padding {
     padding-top: calc(var(--section-space) - calc(var(--space) * 2));
     padding-bottom: calc(var(--section-space) - calc(var(--space) * 2));
   }
 
   .header__container {
-    gap: calc(var(--space) / 2);
+    gap: calc(var(--space) * 0.75);
   }
 
   .header__top {
@@ -542,19 +546,30 @@
   }
 
   .header__bottom {
-    flex-wrap: wrap;
-    gap: var(--space);
-    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: clamp(10px, 1.2vw, var(--space));
+    justify-content: space-between;
   }
 
   .header__gnb {
-    width: 100%;
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 0;
   }
 
   .header__gnb-list {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: flex-start;
-    gap: 10px calc(var(--space) * 2);
+    gap: clamp(10px, 1.35vw, calc(var(--space) * 1.5));
+  }
+
+  .header__gnb-list a {
+    white-space: nowrap;
+  }
+
+  .header__reserve-btn {
+    flex-shrink: 0;
   }
 
   .header__lang-btn {
@@ -598,6 +613,11 @@
 }
 
 @media (max-width: 767px) {
+  .main-header {
+    padding-top: var(--space);
+    padding-bottom: var(--space);
+  }
+
   .container {
     padding-left: var(--space);
     padding-right: var(--space);
@@ -632,6 +652,10 @@
 
   .header__actions {
     gap: calc(var(--space) / 2);
+  }
+
+  .header__top {
+    align-items: center;
   }
 
   .header__lang-btn {
@@ -749,6 +773,3 @@
     gap: var(--space);
   }
 }
-=======
-.gap-20 { gap: var(--gutter); }
->>>>>>> parent of 75d9eae (sustainability 구현 완료)

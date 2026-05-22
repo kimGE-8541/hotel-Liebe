@@ -177,7 +177,6 @@
     new KvVideoController(kvSection);
   }
 
-<<<<<<< HEAD
   function initializeHeaderPastKv() {
     const header = document.querySelector(".main-header");
     const kvSection = document.querySelector(".kv");
@@ -203,15 +202,12 @@
     window.addEventListener("resize", update);
   }
 
-=======
->>>>>>> parent of a0c9eb0 (메인페이지 완료)
   function initializeRoomTabs() {
     const roomSection = document.querySelector(".room");
     if (!roomSection) return;
 
     const tabsRoot = roomSection.querySelector(".room__tabs");
     const tabButtons = Array.from(roomSection.querySelectorAll(".room__tab"));
-<<<<<<< HEAD
     const panels = Array.from(roomSection.querySelectorAll(".room__panel"));
     if (!tabsRoot || !tabButtons.length || !panels.length) return;
 
@@ -222,37 +218,6 @@
       const activeRect = activeTab.getBoundingClientRect();
       tabsRoot.style.setProperty("--room-tab-x", `${activeRect.left - rootRect.left}px`);
       tabsRoot.style.setProperty("--room-tab-w", `${activeRect.width}px`);
-=======
-    const sourceMap = new Map(
-      Array.from(roomSection.querySelectorAll(".room__source")).map((source) => [source.dataset.tab, source])
-    );
-    const mediaWrapper = roomSection.querySelector(".room__media");
-    const contentWrapper = roomSection.querySelector(".room__content");
-    const imageElement = roomSection.querySelector(".room__media img");
-    const titleElement = roomSection.querySelector(".room__title");
-    const descriptionElement = roomSection.querySelector(".room__content p");
-    const viewMoreElement = roomSection.querySelector(".room__view-more");
-    let isSwitching = false;
-    if (!tabButtons.length || !sourceMap.size) return;
-    if (!mediaWrapper || !contentWrapper || !imageElement || !titleElement || !descriptionElement || !viewMoreElement) return;
-
-    const updateDisplayContent = (tabName) => {
-      const source = sourceMap.get(tabName);
-      if (!source) return;
-
-      const sourceImage = source.querySelector("img");
-      const sourceTitle = source.querySelector("h3");
-      const sourceDescription = source.querySelector("p");
-      const sourceLink = source.querySelector("a");
-      if (!sourceImage || !sourceTitle || !sourceDescription || !sourceLink) return;
-
-      imageElement.src = sourceImage.getAttribute("src") || "";
-      imageElement.alt = sourceImage.getAttribute("alt") || "";
-      titleElement.textContent = sourceTitle.textContent || "";
-      descriptionElement.innerHTML = sourceDescription.innerHTML;
-      viewMoreElement.textContent = sourceLink.textContent || "";
-      viewMoreElement.href = sourceLink.getAttribute("href") || "#";
->>>>>>> parent of a0c9eb0 (메인페이지 완료)
     };
 
     const activateTab = (tabName) => {
@@ -262,7 +227,6 @@
         button.setAttribute("aria-selected", isActive ? "true" : "false");
       });
 
-<<<<<<< HEAD
       panels.forEach((panel) => {
         const isActive = panel.dataset.tabPanel === tabName;
         panel.classList.toggle("is-active", isActive);
@@ -274,23 +238,11 @@
       });
 
       updateTabIndicator();
-=======
-      mediaWrapper.classList.add("is-fading");
-      contentWrapper.classList.add("is-fading");
-
-      window.setTimeout(() => {
-        updateDisplayContent(tabName);
-        mediaWrapper.classList.remove("is-fading");
-        contentWrapper.classList.remove("is-fading");
-        isSwitching = false;
-      }, 220);
->>>>>>> parent of a0c9eb0 (메인페이지 완료)
     };
 
     tabButtons.forEach((button) => {
       button.addEventListener("click", () => {
-        if (isSwitching || button.classList.contains("is-active")) return;
-        isSwitching = true;
+        if (button.classList.contains("is-active")) return;
         activateTab(button.dataset.tab);
       });
     });
@@ -299,7 +251,6 @@
     window.addEventListener("resize", updateTabIndicator);
   }
 
-<<<<<<< HEAD
   function initializeSceneSwiper() {
     const sceneSwiper = document.querySelector(".scene__swiper");
     const prevButton = document.querySelector(".scene__nav--prev");
@@ -352,8 +303,9 @@
     });
   }
 
-=======
->>>>>>> parent of a0c9eb0 (메인페이지 완료)
   initializeKvSection();
+  initializeHeaderPastKv();
   initializeRoomTabs();
+  initializeSceneSwiper();
+  initializeMobileMenu();
 })();
