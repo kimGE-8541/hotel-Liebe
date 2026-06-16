@@ -1,7 +1,9 @@
 (function () {
   function initializeHeaderPastSubHero() {
     const header = document.querySelector(".main-header");
-    const heroSection = document.querySelector(".sub-hero");
+    const heroSection =
+      document.querySelector(".sub-hero") ||
+      document.querySelector(".reservation-process");
     if (!header || !heroSection) return;
 
     const CLASS_PAST = "is-past-kv";

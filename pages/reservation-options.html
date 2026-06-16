@@ -98,6 +98,282 @@
                 </nav>
             </div>
         </section>
+
+        <section class="reservation-options section_padding" aria-label="옵션 선택">
+            <div class="container reservation-options__container">
+                <div class="reservation-options__main">
+                    <section class="reservation-options__catalog" aria-label="옵션 목록">
+                        <!-- 옵션 그룹 템플릿: 복사하여 카테고리 추가 -->
+                        <div class="reservation-option-group">
+                            <h2 class="title-h2 reservation-option-group__title">Dining</h2>
+                            <ul class="reservation-option-group__list">
+                                <li class="reservation-option-item" data-option-id="adult-breakfast" data-unit-price="17000">
+                                    <div class="reservation-option-item__info">
+                                        <p class="reservation-option-item__name txt-bold-p25">성인 조식 추가</p>
+                                        <p class="reservation-option-item__desc txt-light-p25">성인 1인 기준 / 뷔페 이용</p>
+                                    </div>
+                                    <div class="reservation-option-item__actions">
+                                        <span class="reservation-option-item__price txt-light-p25">17,000 KRW</span>
+                                        <div class="reservation-option-item__stepper" role="group" aria-label="성인 조식 추가 수량">
+                                            <button type="button" class="reservation-option-item__qty-btn" data-action="decrease" aria-label="수량 감소">-</button>
+                                            <span class="reservation-option-item__qty txt-light-p25" aria-live="polite">0</span>
+                                            <button type="button" class="reservation-option-item__qty-btn" data-action="increase" aria-label="수량 증가">+</button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="reservation-option-item" data-option-id="child-breakfast" data-unit-price="7000">
+                                    <div class="reservation-option-item__info">
+                                        <p class="reservation-option-item__name txt-bold-p25">어린이 조식 추가</p>
+                                        <p class="reservation-option-item__desc txt-light-p25">초등학생 이하</p>
+                                    </div>
+                                    <div class="reservation-option-item__actions">
+                                        <span class="reservation-option-item__price txt-light-p25">7,000 KRW</span>
+                                        <div class="reservation-option-item__stepper" role="group" aria-label="어린이 조식 추가 수량">
+                                            <button type="button" class="reservation-option-item__qty-btn" data-action="decrease" aria-label="수량 감소">-</button>
+                                            <span class="reservation-option-item__qty txt-light-p25" aria-live="polite">0</span>
+                                            <button type="button" class="reservation-option-item__qty-btn" data-action="increase" aria-label="수량 증가">+</button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="reservation-option-item" data-option-id="dinner-buffet" data-unit-price="40000">
+                                    <div class="reservation-option-item__info">
+                                        <p class="reservation-option-item__name txt-bold-p25">디너 뷔페</p>
+                                        <p class="reservation-option-item__desc txt-light-p25">2인 / 시간대 선택 가능</p>
+                                    </div>
+                                    <div class="reservation-option-item__actions">
+                                        <span class="reservation-option-item__price txt-light-p25">40,000 KRW</span>
+                                        <div class="reservation-option-item__stepper" role="group" aria-label="디너 뷔페 수량">
+                                            <button type="button" class="reservation-option-item__qty-btn" data-action="decrease" aria-label="수량 감소">-</button>
+                                            <span class="reservation-option-item__qty txt-light-p25" aria-live="polite">0</span>
+                                            <button type="button" class="reservation-option-item__qty-btn" data-action="increase" aria-label="수량 증가">+</button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="reservation-option-item" data-option-id="room-service-set" data-unit-price="40000">
+                                    <div class="reservation-option-item__info">
+                                        <p class="reservation-option-item__name txt-bold-p25">룸서비스 세트</p>
+                                        <p class="reservation-option-item__desc txt-light-p25">객실에서 즐기는 프라이빗 다이닝</p>
+                                    </div>
+                                    <div class="reservation-option-item__actions">
+                                        <span class="reservation-option-item__price txt-light-p25">40,000 KRW</span>
+                                        <div class="reservation-option-item__stepper" role="group" aria-label="룸서비스 세트 수량">
+                                            <button type="button" class="reservation-option-item__qty-btn" data-action="decrease" aria-label="수량 감소">-</button>
+                                            <span class="reservation-option-item__qty txt-light-p25" aria-live="polite">0</span>
+                                            <button type="button" class="reservation-option-item__qty-btn" data-action="increase" aria-label="수량 증가">+</button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="reservation-option-group">
+                            <h2 class="title-h2 reservation-option-group__title">Wellness</h2>
+                            <ul class="reservation-option-group__list">
+                                <li class="reservation-option-item" data-option-id="spa-program" data-unit-price="17000">
+                                    <div class="reservation-option-item__info">
+                                        <p class="reservation-option-item__name txt-bold-p25">스파 프로그램</p>
+                                        <p class="reservation-option-item__desc txt-light-p25">60분 / 90분 코스 선택</p>
+                                    </div>
+                                    <div class="reservation-option-item__actions">
+                                        <span class="reservation-option-item__price txt-light-p25">17,000 KRW</span>
+                                        <div class="reservation-option-item__stepper" role="group" aria-label="스파 프로그램 수량">
+                                            <button type="button" class="reservation-option-item__qty-btn" data-action="decrease" aria-label="수량 감소">-</button>
+                                            <span class="reservation-option-item__qty txt-light-p25" aria-live="polite">0</span>
+                                            <button type="button" class="reservation-option-item__qty-btn" data-action="increase" aria-label="수량 증가">+</button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="reservation-option-item" data-option-id="fitness-training" data-unit-price="17000">
+                                    <div class="reservation-option-item__info">
+                                        <p class="reservation-option-item__name txt-bold-p25">피트니스 퍼스널 트레이닝</p>
+                                        <p class="reservation-option-item__desc txt-light-p25">사전 예약 필수</p>
+                                    </div>
+                                    <div class="reservation-option-item__actions">
+                                        <span class="reservation-option-item__price txt-light-p25">17,000 KRW</span>
+                                        <div class="reservation-option-item__stepper" role="group" aria-label="피트니스 퍼스널 트레이닝 수량">
+                                            <button type="button" class="reservation-option-item__qty-btn" data-action="decrease" aria-label="수량 감소">-</button>
+                                            <span class="reservation-option-item__qty txt-light-p25" aria-live="polite">0</span>
+                                            <button type="button" class="reservation-option-item__qty-btn" data-action="increase" aria-label="수량 증가">+</button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="reservation-option-group">
+                            <h2 class="title-h2 reservation-option-group__title">Special</h2>
+                            <ul class="reservation-option-group__list">
+                                <li class="reservation-option-item" data-option-id="welcome-drink" data-unit-price="17000">
+                                    <div class="reservation-option-item__info">
+                                        <p class="reservation-option-item__name txt-bold-p25">웰컴 드링크</p>
+                                        <p class="reservation-option-item__desc txt-light-p25">체크인 시 제공</p>
+                                    </div>
+                                    <div class="reservation-option-item__actions">
+                                        <span class="reservation-option-item__price txt-light-p25">17,000 KRW</span>
+                                        <div class="reservation-option-item__stepper" role="group" aria-label="웰컴 드링크 수량">
+                                            <button type="button" class="reservation-option-item__qty-btn" data-action="decrease" aria-label="수량 감소">-</button>
+                                            <span class="reservation-option-item__qty txt-light-p25" aria-live="polite">0</span>
+                                            <button type="button" class="reservation-option-item__qty-btn" data-action="increase" aria-label="수량 증가">+</button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="reservation-option-item" data-option-id="anniversary-setting" data-unit-price="17000">
+                                    <div class="reservation-option-item__info">
+                                        <p class="reservation-option-item__name txt-bold-p25">기념일 세팅</p>
+                                        <p class="reservation-option-item__desc txt-light-p25">케이크 및 객실 데코레이션</p>
+                                    </div>
+                                    <div class="reservation-option-item__actions">
+                                        <span class="reservation-option-item__price txt-light-p25">17,000 KRW</span>
+                                        <div class="reservation-option-item__stepper" role="group" aria-label="기념일 세팅 수량">
+                                            <button type="button" class="reservation-option-item__qty-btn" data-action="decrease" aria-label="수량 감소">-</button>
+                                            <span class="reservation-option-item__qty txt-light-p25" aria-live="polite">0</span>
+                                            <button type="button" class="reservation-option-item__qty-btn" data-action="increase" aria-label="수량 증가">+</button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="reservation-option-item" data-option-id="late-checkout" data-unit-price="17000">
+                                    <div class="reservation-option-item__info">
+                                        <p class="reservation-option-item__name txt-bold-p25">레이트 체크아웃</p>
+                                        <p class="reservation-option-item__desc txt-light-p25">최대 14:00까지 연장 가능</p>
+                                    </div>
+                                    <div class="reservation-option-item__actions">
+                                        <span class="reservation-option-item__price txt-light-p25">17,000 KRW</span>
+                                        <div class="reservation-option-item__stepper" role="group" aria-label="레이트 체크아웃 수량">
+                                            <button type="button" class="reservation-option-item__qty-btn" data-action="decrease" aria-label="수량 감소">-</button>
+                                            <span class="reservation-option-item__qty txt-light-p25" aria-live="polite">0</span>
+                                            <button type="button" class="reservation-option-item__qty-btn" data-action="increase" aria-label="수량 증가">+</button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="reservation-option-group">
+                            <h2 class="title-h2 reservation-option-group__title">Service</h2>
+                            <ul class="reservation-option-group__list">
+                                <li class="reservation-option-item" data-option-id="valet-parking" data-unit-price="17000">
+                                    <div class="reservation-option-item__info">
+                                        <p class="reservation-option-item__name txt-bold-p25">발렛 파킹</p>
+                                        <p class="reservation-option-item__desc txt-light-p25">1박 기준</p>
+                                    </div>
+                                    <div class="reservation-option-item__actions">
+                                        <span class="reservation-option-item__price txt-light-p25">17,000 KRW</span>
+                                        <div class="reservation-option-item__stepper" role="group" aria-label="발렛 파킹 수량">
+                                            <button type="button" class="reservation-option-item__qty-btn" data-action="decrease" aria-label="수량 감소">-</button>
+                                            <span class="reservation-option-item__qty txt-light-p25" aria-live="polite">0</span>
+                                            <button type="button" class="reservation-option-item__qty-btn" data-action="increase" aria-label="수량 증가">+</button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="reservation-option-item" data-option-id="airport-transfer" data-unit-price="17000">
+                                    <div class="reservation-option-item__info">
+                                        <p class="reservation-option-item__name txt-bold-p25">공항 픽업 / 샌딩</p>
+                                        <p class="reservation-option-item__desc txt-light-p25">사전 예약 필수</p>
+                                    </div>
+                                    <div class="reservation-option-item__actions">
+                                        <span class="reservation-option-item__price txt-light-p25">17,000 KRW</span>
+                                        <div class="reservation-option-item__stepper" role="group" aria-label="공항 픽업 / 샌딩 수량">
+                                            <button type="button" class="reservation-option-item__qty-btn" data-action="decrease" aria-label="수량 감소">-</button>
+                                            <span class="reservation-option-item__qty txt-light-p25" aria-live="polite">0</span>
+                                            <button type="button" class="reservation-option-item__qty-btn" data-action="increase" aria-label="수량 증가">+</button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="reservation-option-item" data-option-id="extra-bed" data-unit-price="17000">
+                                    <div class="reservation-option-item__info">
+                                        <p class="reservation-option-item__name txt-bold-p25">추가 침구 / 엑스트라 베드</p>
+                                        <p class="reservation-option-item__desc txt-light-p25">객실 타입별 상이</p>
+                                    </div>
+                                    <div class="reservation-option-item__actions">
+                                        <span class="reservation-option-item__price txt-light-p25">17,000 KRW</span>
+                                        <div class="reservation-option-item__stepper" role="group" aria-label="추가 침구 / 엑스트라 베드 수량">
+                                            <button type="button" class="reservation-option-item__qty-btn" data-action="decrease" aria-label="수량 감소">-</button>
+                                            <span class="reservation-option-item__qty txt-light-p25" aria-live="polite">0</span>
+                                            <button type="button" class="reservation-option-item__qty-btn" data-action="increase" aria-label="수량 증가">+</button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <div class="reservation-options__requests">
+                        <section class="reservation-requests" aria-labelledby="reservation-requests-title">
+                            <p class="reservation-requests__title txt-light-p25" id="reservation-requests-title">요청사항</p>
+                            <textarea class="reservation-requests__textarea txt-light-p20" id="reservation-requests-input" name="requests" rows="3"></textarea>
+                            <ul class="reservation-requests__notes">
+                                <li class="reservation-requests__note txt-light-p20">모든 옵션은 사전 예약 및 결제 완료 후 이용 가능합니다.</li>
+                                <li class="reservation-requests__note txt-light-p20">일부 서비스는 이용 가능 시간이 제한될 수 있습니다.</li>
+                                <li class="reservation-requests__note txt-light-p20">객실 타입 및 투숙 일정에 따라 선택 가능한 옵션이 상이할 수 있습니다.</li>
+                                <li class="reservation-requests__note txt-light-p20">웰니스 및 다이닝 프로그램은 사전 예약이 필수이며, 현장 이용이 제한될 수 있습니다.</li>
+                                <li class="reservation-requests__note txt-light-p20">취소 및 변경은 체크인 24시간 전까지 가능하며, 이후에는 수수료가 발생할 수 있습니다.</li>
+                                <li class="reservation-requests__note txt-light-p20">기념일 및 특별 요청 사항은 사전 문의를 권장드립니다.</li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+
+                <aside class="reservation-options__aside reservation-summary-sheet" id="reservation-summary-sheet" aria-label="예약 요약">
+                    <div class="reservation-summary-sheet__backdrop" id="reservation-summary-sheet-backdrop" hidden aria-hidden="true"></div>
+                    <div class="reservation-options__sticky reservation-summary-sheet__panel">
+                        <button type="button" class="reservation-summary-sheet__handle" id="reservation-summary-sheet-handle" aria-expanded="false" aria-controls="reservation-summary-sheet-panel">
+                            <span class="reservation-summary-sheet__handle-bar" aria-hidden="true"></span>
+                            <span class="visually-hidden">예약 요약 펼치기</span>
+                        </button>
+                        <div class="reservation-summary-sheet__content" id="reservation-summary-sheet-panel">
+                        <div class="reservation-summary">
+                            <div class="reservation-summary__dates">
+                                <span class="reservation-summary__date txt-light-p20" id="reservation-summary-check-in">25.01.01 (수)</span>
+                                <span class="reservation-summary__dash txt-light-p20" aria-hidden="true">-</span>
+                                <span class="reservation-summary__date txt-light-p20" id="reservation-summary-check-out">25.12.31 (수)</span>
+                            </div>
+
+                            <div class="reservation-summary__body">
+                                <div class="reservation-summary__room">
+                                    <p class="reservation-summary__room-label txt-light-p20">Room</p>
+                                    <h3 class="reservation-summary__room-name title-h3" id="reservation-summary-room-name">Deluxe Double</h3>
+
+                                    <div class="reservation-summary__guests">
+                                        <div class="reservation-summary__guests-left">
+                                            <p class="reservation-summary__guest-line txt-light-p25">Adult: <span id="reservation-summary-adults">1</span></p>
+                                            <p class="reservation-summary__guest-line txt-light-p25">Child: <span id="reservation-summary-children">1</span></p>
+                                        </div>
+                                        <p class="reservation-summary__guest-line txt-light-p25">Room: <span id="reservation-summary-rooms">1</span></p>
+                                    </div>
+
+                                    <div class="reservation-summary__base-price">
+                                        <span class="txt-light-p20">기본금</span>
+                                        <span class="txt-light-p20 reservation-summary__base-price-value" id="reservation-summary-base-price">KRW 440,000</span>
+                                    </div>
+                                </div>
+
+                                <div class="reservation-summary__options">
+                                    <p class="reservation-summary__options-label txt-light-p20">Option</p>
+                                    <ul class="reservation-summary__options-list" id="reservation-summary-options-list" aria-label="선택 옵션"></ul>
+                                    <div class="reservation-summary__options-total">
+                                        <span class="txt-bold-p20">옵션 금액</span>
+                                        <span class="txt-bold-p20 reservation-summary__options-total-value" id="reservation-summary-options-total">0 KRW</span>
+                                    </div>
+                                </div>
+
+                                <div class="reservation-summary__amount">
+                                    <div class="reservation-summary__tax">
+                                        <span class="txt-light-p20">세금(10%)</span>
+                                        <span class="txt-light-p20 reservation-summary__tax-value" id="reservation-summary-tax">0 KRW</span>
+                                    </div>
+                                    <div class="reservation-summary__grand-total-row">
+                                        <span class="txt-light-p25">Total</span>
+                                        <span class="reservation-summary__grand-total" id="reservation-summary-grand-total">0 KRW</span>
+                                    </div>
+                                </div>
+
+                                <button type="button" class="reservation-summary__submit txt-bold-p25" id="reservation-summary-submit">예약하기</button>
+                            </div>
+                        </div>
+
+                        <p class="reservation-summary__note txt-light-p20">*요청사항은 별도 요금이 부과될 수 있습니다.</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
     </main>
 
     <footer class="footer" aria-label="사이트 푸터">
@@ -144,6 +420,9 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="../assets/js/common.js"></script>
     <script src="../assets/js/sustainability.js"></script>
+    <script src="../assets/js/reservation-summary.js"></script>
+    <script src="../assets/js/reservation-summary-sheet.js"></script>
+    <script src="../assets/js/reservation-options.js"></script>
 </body>
 
 </html>

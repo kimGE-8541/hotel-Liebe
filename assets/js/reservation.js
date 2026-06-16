@@ -1,10 +1,76 @@
 (function () {
+  var STORAGE_KEY = "hotelLiebeReservation";
+
   function pad2(n) {
     return String(n).padStart(2, "0");
   }
 
+  var reservationDates = {
+    start: null,
+    end: null,
+  };
+
   function formatDisplayDate(date) {
     return date.getFullYear() + "." + pad2(date.getMonth() + 1) + "." + pad2(date.getDate());
+  }
+
+  function syncReservationDates(start, end) {
+    reservationDates.start = start;
+    reservationDates.end = end;
+  }
+
+  function parseNumericValue(text) {
+    var match = String(text || "").match(/\d+/);
+    return match ? Number(match[0]) : 0;
+  }
+
+  function getFilterCount(id) {
+    var el = document.getElementById(id);
+    return el ? parseNumericValue(el.textContent) : 0;
+  }
+
+  function normalizeBasePrice(price) {
+    return String(price || "").replace(/~\s*$/, "").trim();
+  }
+
+  function buildReservationState(roomButton) {
+    var checkIn = reservationDates.start;
+    var checkOut = reservationDates.end;
+
+    return {
+      checkIn:
+        checkIn instanceof Date
+          ? checkIn.getFullYear() + "-" + pad2(checkIn.getMonth() + 1) + "-" + pad2(checkIn.getDate())
+          : "2025-01-01",
+      checkOut:
+        checkOut instanceof Date
+          ? checkOut.getFullYear() + "-" + pad2(checkOut.getMonth() + 1) + "-" + pad2(checkOut.getDate())
+          : "2025-12-31",
+      adults: getFilterCount("reservation-adults-value"),
+      children: getFilterCount("reservation-children-value"),
+      rooms: getFilterCount("reservation-rooms-value"),
+      roomName: roomButton.getAttribute("data-room-name") || "",
+      basePrice: normalizeBasePrice(roomButton.getAttribute("data-room-price")),
+    };
+  }
+
+  function saveReservationState(roomButton) {
+    try {
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(buildReservationState(roomButton)));
+    } catch (error) {
+      /* ignore storage errors */
+    }
+  }
+
+  function initializeBookButtons() {
+    var bookButtons = document.querySelectorAll(".reservation-room__book-btn");
+    if (!bookButtons.length) return;
+
+    bookButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        saveReservationState(button);
+      });
+    });
   }
 
   function parseDateOnly(str) {
@@ -84,12 +150,14 @@
 
     var rangeStart = parseDateOnly("2025-01-01");
     var rangeEnd = parseDateOnly("2025-12-31");
+    syncReservationDates(rangeStart, rangeEnd);
     var viewDate = new Date(rangeStart.getFullYear(), rangeStart.getMonth(), 1);
     var pickingEnd = false;
 
     function updateValue() {
       valueEl.textContent =
         formatDisplayDate(rangeStart) + "~" + formatDisplayDate(rangeEnd);
+      syncReservationDates(rangeStart, rangeEnd);
     }
 
     function closeCalendar() {
@@ -165,7 +233,9 @@
           pickingEnd = false;
           updateValue();
           closeCalendar();
+          return;
         }
+        syncReservationDates(rangeStart, rangeEnd);
         renderMonth();
       });
 
@@ -225,5 +295,6 @@
   document.addEventListener("DOMContentLoaded", function () {
     initializeDropdowns();
     initializeCalendar();
+    initializeBookButtons();
   });
 })();
