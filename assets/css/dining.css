@@ -70,3 +70,162 @@
     padding-inline: 0;
   }
 }
+
+/* -------------------------------------------------------------------------- */
+/* Dining Venue */
+/* -------------------------------------------------------------------------- */
+.dining-venue {
+  --dining-venue-offset: max(0px, calc((100vw - var(--content-width)) / 2));
+  --dining-venue-image-width: 1450px;
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--color-primary);
+  overflow: hidden;
+}
+
+.dining-venue__media {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: var(--dining-venue-image-width);
+  height: 100%;
+  min-height: 100vh;
+}
+
+.dining-venue__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  object-fit: cover;
+}
+
+.dining-venue__panel {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  padding-left: var(--dining-venue-offset);
+  box-sizing: border-box;
+}
+
+.dining-venue__card {
+  width: 500px;
+  max-width: 100%;
+  padding: 90px 60px;
+  background-color: var(--color-white);
+  box-sizing: border-box;
+}
+
+.dining-venue__title {
+  margin: 0;
+  color: var(--color-text);
+}
+
+.dining-venue__desc {
+  margin: 45px 0 0;
+  color: var(--color-primary);
+}
+
+.dining-venue__divider {
+  margin: 45px 0 0;
+  border: none;
+  border-top: 1px solid color-mix(in srgb, var(--color-text) 20%, transparent);
+}
+
+.dining-venue__info {
+  margin-top: 45px;
+  padding-inline: 30px;
+}
+
+.dining-venue__info-group {
+  margin: 0;
+}
+
+.dining-venue__info-group + .dining-venue__info-group {
+  margin-top: 45px;
+}
+
+.dining-venue__info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 15px;
+}
+
+.dining-venue__info-row + .dining-venue__info-row {
+  margin-top: 5px;
+}
+
+.dining-venue__info-row dt,
+.dining-venue__info-row dd {
+  margin: 0;
+}
+
+.dining-venue__info-row dd {
+  text-align: right;
+}
+
+@media (max-width: 1280px) {
+  .dining-venue {
+    --dining-venue-image-width: min(1450px, 58vw);
+  }
+
+  .dining-venue__card {
+    width: min(500px, calc(100vw - var(--dining-venue-offset) - 30px));
+    padding: 75px 45px;
+  }
+
+  .dining-venue__title {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 767px) {
+  .dining-venue {
+    min-height: auto;
+  }
+
+  .dining-venue__media {
+    position: relative;
+    width: 100%;
+    min-height: 320px;
+    height: 50vh;
+  }
+
+  .dining-venue__media img {
+    min-height: 320px;
+  }
+
+  .dining-venue__panel {
+    min-height: 0;
+    padding: 0;
+  }
+
+  .dining-venue__card {
+    width: 100%;
+    padding: 60px 30px;
+  }
+
+  .dining-venue__title {
+    font-size: 36px;
+  }
+
+  .dining-venue__desc {
+    margin-top: 30px;
+  }
+
+  .dining-venue__divider {
+    margin-top: 30px;
+  }
+
+  .dining-venue__info {
+    margin-top: 45px;
+    padding-inline: 0;
+  }
+
+  .dining-venue__info-group + .dining-venue__info-group {
+    margin-top: 30px;
+  }
+}
