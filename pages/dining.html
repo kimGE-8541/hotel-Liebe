@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="../assets/css/reset.css">
     <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/dining.css">
 </head>
 
@@ -84,53 +85,164 @@
             </div>
         </section>
 
-        <section class="dining-venue dining-venue--restaurant" aria-label="Lumière Table">
-            <div class="dining-venue__media" aria-hidden="true">
-                <img src="../assets/images/dining-restaurant.jpeg" alt="">
-            </div>
+        <section class="dining-venues" aria-label="다이닝 공간">
+            <div class="swiper dining-venues__swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="dining-venue">
+                            <article class="dining-venue__content" aria-label="Lumière Table">
+                            <div class="dining-venue__media" aria-hidden="true">
+                                <img src="../assets/images/dining-restaurant.jpeg" alt="">
+                            </div>
+                            <div class="dining-venue__panel">
+                                <div class="dining-venue__card">
+                                    <h3 class="dining-venue__title logo">Lumière Table</h3>
+                                    <p class="dining-venue__desc txt-light-p20">
+                                        신선한 제철 식재료를 바탕으로<br>
+                                        다양한 요리를 선보입니다.<br>
+                                        차분한 분위기 속에서 여유로운 식사를<br>
+                                        즐길 수 있으며, 시간의 흐름에 따라<br>
+                                        변화하는 미식의 경험을 제공합니다.
+                                    </p>
+                                    <hr class="dining-venue__divider">
+                                    <div class="dining-venue__info">
+                                        <dl class="dining-venue__info-group">
+                                            <div class="dining-venue__info-row">
+                                                <dt class="txt-bold-p20">Breakfast</dt>
+                                                <dd class="txt-light-p20">07:00 - 10:30</dd>
+                                            </div>
+                                            <div class="dining-venue__info-row">
+                                                <dt class="txt-bold-p20">Lunch</dt>
+                                                <dd class="txt-light-p20">12:00 - 14:30</dd>
+                                            </div>
+                                            <div class="dining-venue__info-row">
+                                                <dt class="txt-bold-p20">Dinner</dt>
+                                                <dd class="txt-light-p20">18:00 - 21:30</dd>
+                                            </div>
+                                        </dl>
+                                        <dl class="dining-venue__info-group">
+                                            <div class="dining-venue__info-row">
+                                                <dt class="txt-bold-p20">Location</dt>
+                                                <dd class="txt-light-p20">호텔 2층</dd>
+                                            </div>
+                                            <div class="dining-venue__info-row">
+                                                <dt class="txt-bold-p20">Capacity</dt>
+                                                <dd class="txt-light-p20">총 120석</dd>
+                                            </div>
+                                            <div class="dining-venue__info-row">
+                                                <dt class="txt-bold-p20">Information</dt>
+                                                <dd class="txt-light-p20">사전 예약 권장</dd>
+                                            </div>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                            </article>
+                        </div>
+                    </div>
 
-            <div class="dining-venue__panel">
-                <div class="dining-venue__card">
-                    <h3 class="dining-venue__title logo">Lumière Table</h3>
-                    <p class="dining-venue__desc txt-light-p20">
-                        신선한 제철 식재료를 바탕으로<br>
-                        다양한 요리를 선보입니다.<br>
-                        차분한 분위기 속에서 여유로운 식사를<br>
-                        즐길 수 있으며, 시간의 흐름에 따라<br>
-                        변화하는 미식의 경험을 제공합니다.
-                    </p>
-                    <hr class="dining-venue__divider">
-                    <div class="dining-venue__info">
-                        <dl class="dining-venue__info-group">
-                            <div class="dining-venue__info-row">
-                                <dt class="txt-bold-p20">Breakfast</dt>
-                                <dd class="txt-light-p20">07:00 - 10:30</dd>
+                    <div class="swiper-slide">
+                        <div class="dining-venue">
+                            <article class="dining-venue__content" aria-label="Nocturne Bar">
+                            <div class="dining-venue__media" aria-hidden="true">
+                                <img src="../assets/images/dining-bar.jpeg" alt="">
                             </div>
-                            <div class="dining-venue__info-row">
-                                <dt class="txt-bold-p20">Lunch</dt>
-                                <dd class="txt-light-p20">12:00 - 14:30</dd>
+                            <div class="dining-venue__panel">
+                                <div class="dining-venue__card">
+                                    <h3 class="dining-venue__title logo">Nocturne Bar</h3>
+                                    <p class="dining-venue__desc txt-light-p20">
+                                        엄선된 와인과 시그니처 칵테일을 통해<br>
+                                        깊이 있는 밤을 경험할 수 있습니다.<br>
+                                        차분한 조명과 음악이 어우러진<br>
+                                        공간에서 여유로운 시간을 즐겨보세요.
+                                    </p>
+                                    <hr class="dining-venue__divider">
+                                    <div class="dining-venue__info">
+                                        <dl class="dining-venue__info-group">
+                                            <div class="dining-venue__info-row">
+                                                <dt class="txt-bold-p20">Hours</dt>
+                                                <dd class="txt-light-p20">18:00 – 01:00</dd>
+                                            </div>
+                                        </dl>
+                                        <dl class="dining-venue__info-group">
+                                            <div class="dining-venue__info-row">
+                                                <dt class="txt-bold-p20">Location</dt>
+                                                <dd class="txt-light-p20">호텔 최상층</dd>
+                                            </div>
+                                            <div class="dining-venue__info-row">
+                                                <dt class="txt-bold-p20">Capacity</dt>
+                                                <dd class="txt-light-p20">60석</dd>
+                                            </div>
+                                            <div class="dining-venue__info-row">
+                                                <dt class="txt-bold-p20">Information</dt>
+                                                <dd class="dining-venue__info-values txt-light-p20">
+                                                    <span>성인 고객 전용</span>
+                                                    <span>예약 권장</span>
+                                                </dd>
+                                            </div>
+                                        </dl>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="dining-venue__info-row">
-                                <dt class="txt-bold-p20">Dinner</dt>
-                                <dd class="txt-light-p20">18:00 - 21:30</dd>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="dining-venue">
+                            <article class="dining-venue__content" aria-label="Atelier Lounge">
+                            <div class="dining-venue__media" aria-hidden="true">
+                                <img src="../assets/images/dining-lounge.jpeg" alt="">
                             </div>
-                        </dl>
-                        <dl class="dining-venue__info-group">
-                            <div class="dining-venue__info-row">
-                                <dt class="txt-bold-p20">Location</dt>
-                                <dd class="txt-light-p20">호텔 2층</dd>
+                            <div class="dining-venue__panel">
+                                <div class="dining-venue__card">
+                                    <h3 class="dining-venue__title logo">Atelier Lounge</h3>
+                                    <p class="dining-venue__desc txt-light-p20">
+                                        자연광이 스며드는 공간에서<br>
+                                        커피와 티를 즐길 수 있습니다.<br>
+                                        조용한 분위기 속에서<br>
+                                        대화와 휴식을 동시에 경험해보세요.
+                                    </p>
+                                    <hr class="dining-venue__divider">
+                                    <div class="dining-venue__info">
+                                        <dl class="dining-venue__info-group">
+                                            <div class="dining-venue__info-row">
+                                                <dt class="txt-bold-p20">Hours</dt>
+                                                <dd class="txt-light-p20">10:00 – 20:00</dd>
+                                            </div>
+                                        </dl>
+                                        <dl class="dining-venue__info-group">
+                                            <div class="dining-venue__info-row">
+                                                <dt class="txt-bold-p20">Location</dt>
+                                                <dd class="txt-light-p20">로비층</dd>
+                                            </div>
+                                            <div class="dining-venue__info-row">
+                                                <dt class="txt-bold-p20">Capacity</dt>
+                                                <dd class="txt-light-p20">80석</dd>
+                                            </div>
+                                            <div class="dining-venue__info-row">
+                                                <dt class="txt-bold-p20">Offer Menu</dt>
+                                                <dd class="dining-venue__info-values txt-light-p20">
+                                                    <span>커피, 티</span>
+                                                    <span>디저트</span>
+                                                    <span>간단한 브런치</span>
+                                                </dd>
+                                            </div>
+                                        </dl>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="dining-venue__info-row">
-                                <dt class="txt-bold-p20">Capacity</dt>
-                                <dd class="txt-light-p20">총 120석</dd>
-                            </div>
-                            <div class="dining-venue__info-row">
-                                <dt class="txt-bold-p20">Information</dt>
-                                <dd class="txt-light-p20">사전 예약 권장</dd>
-                            </div>
-                        </dl>
+                            </article>
+                        </div>
                     </div>
                 </div>
+
+                <button type="button" class="dining-venues__nav dining-venues__nav--prev" aria-label="이전 다이닝 공간">
+                    <span class="dining-venues__nav-icon" aria-hidden="true">&lt;</span>
+                </button>
+                <button type="button" class="dining-venues__nav dining-venues__nav--next" aria-label="다음 다이닝 공간">
+                    <span class="dining-venues__nav-icon" aria-hidden="true">&gt;</span>
+                </button>
             </div>
         </section>
     </main>
@@ -177,8 +289,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="../assets/js/common.js"></script>
     <script src="../assets/js/sustainability.js"></script>
+    <script src="../assets/js/dining.js"></script>
 </body>
 
 </html>
